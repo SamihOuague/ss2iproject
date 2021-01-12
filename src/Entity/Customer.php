@@ -83,7 +83,7 @@ class Customer
      */
     private $cv;
 
-    public function __toString(): ?string 
+    public function __toString()
     {
         return $this->firstname." ".$this->lastname;
     }

@@ -70,7 +70,7 @@ class Client
         $this->missions = new ArrayCollection();
     }
 
-    public function __toString(): ?string 
+    public function __toString()
     {
         return $this->society;
     }

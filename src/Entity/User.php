@@ -58,7 +58,7 @@ class User implements UserInterface
      */
     private $isVerified = false;
 
-    public function __toString(): ?string
+    public function __toString()
     {
         return $this->email;
     }
