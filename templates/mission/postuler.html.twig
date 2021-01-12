@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MissionController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>Etes vous sure de vouloir postuler pour cette mission ?</h2>
+        <h3>({{title}})</h3>
+        {{form(postuleForm)}}
+    </div>
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}S2IPartner{% endblock %}
+
+{% block body %}
+
+    {% if (app.user) %}
+        {% if not app.user.isVerified %}
+            <h2 class="text-center">Cliquer sur le lien envoyer par mail pour verifier votre adresse email et acceder au contenue.</h2>
+        {% elseif (client or manager) %}
+            <div class="container">
+                <a class="btn btn-outline-dark" style="margin-bottom: 10px;" href="{{ path('mission') }}">Proposer une mission</a>
+                {% for mission in missions %}
+                    <div class="jumbotron">
+                        <h2>{{mission.title}}</h2>
+                        <p>{{mission.describ | slice(0, 100)}}...</p>
+                        {% if (manager) %}
+                            <a href="/candidat/{{mission.id}}" class="btn btn-outline-success">Candidats : {{mission.candidats|length}}</a>
+                        {% endif %}
+                        <a href="/mission/{{mission.id}}/edit" class="btn btn-outline-primary">Modifier</a>
+                        <a href="/mission/{{mission.id}}/delete" class="btn btn-outline-danger">Supprimer</a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% elseif (profil) %}
+            <div class="container">
+                {% for mission in missions %}
+                    <div class="jumbotron">
+                        <h2>{{mission.title}}</h2>
+                        <p>
+                            {{mission.describ | slice(0, 100)}}...
+                            <small>
+                                <a href="/mission/{{mission.id}}">En savoir plus</a>
+                            </small>
+                        </p>
+                        <p>Duree : {{mission.durate}} jours</p>
+                        <p>Tarif journalier : {{mission.price}}$</p>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Profil not completed, complet it <a href="{{ path('profil') }}">here</p></p>
+        {% endif %}
+    {% else %}
+        <div class="container-fluid" 
+            style="background-image: url('/smokebg.png'); 
+                    height: 300px;
+                    background-size: cover;
+                    background-position: center;
+                    margin-top: -40px;
+                    background-repeat: no-repeat;">
+            <div class="h-100 d-flex justify-content-center align-items-center">
+                <div style="background-color: rgba(255, 255, 255, 0.4); padding: 20px;">
+                    <img src="/logo.png" width="450" alt="Logo s2ipartner"/>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="padding-top: 50px;">
+            <h1 class="text-center font-weight-bold" style="color: #6A00FF;">UN SERVICE <br/>A LA HAUTEUR DE VOS EXIGEANCES</h1>
+            <div class="row">
+                <div class="col-lg-6 text-dark" style="font-size: 18px;">
+                    <div class="d-flex align-items-center" style="min-height: 150px;">
+                        <img width="250" src="/logo.png" alt="logo s2ipartner" />
+                    </div>
+                    <p><strong>S2I PARTNER</strong> est le fournisseur privilégié des petites et moyennes entreprise et un partenaire de choix des intégrateurs et constructeurs dans le cadre de <strong>projets de grandes envergures</strong>.<br/>
+                    Offrant une gamme de services étendue dans le domaine de l’<strong>IT</strong> sur tout le territoire national.<br/>
+                    Nous prenons en charge tout ou partie des <strong>projets informatiques</strong> de l’étude à la réalisation, jusqu’à la livraison finale.</p>
+                    <p class="alert alert-success">Créée en <strong>2013</strong></p>
+                    <p class="alert alert-success">Implantée à <strong>Paris</strong>, avec un service opérationnel basé à <strong>Vélizy-Villacoublay</strong></p>
+                    <p class="alert alert-success">Des intervenants et <strong>techniciens expérimentés</strong> et rigoureux</p>
+                    <p class="alert alert-success">Une capacité d'intervention sur tout <strong>le territoire et en Belgique Wallon.</strong></p>
+                </div>
+                <div class="col-lg-6" style="font-size: 21px;">
+                    <div class="d-flex align-items-center" style="min-height: 150px;">
+                        <h2 class="text-center text-success" style=""><strong>Un interlocuteur unique</strong> pour toutes vos demandes de services </h2>
+                    </div>
+                    <p>❖La prise en charge, la gestion, la planification  et le pilotage de vos projets,</p>
+                    <p>❖L’accompagnement de vos unités dans leurs  projets de migration de postes utilisateurs,  mobiles ainsi que la téléphonie,</p>
+                    <p>❖L'intégration de solutions et applications métier Formation des collaborateurs à la prise en main  des applications et solutions Microsoft,</p>
+                    <p>❖Déploiement de service Helpdesk et  support de proximité,</p>
+                    <p>❖Analyse, conseil et reporting, La gestion  efficiente de vos assets.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="height: 800px; margin-top: 50px;">
+            <div class="row h-100">
+                <div class="col-lg-4" style="background-image: url('/louvre.png'); background-position: center;">
+
+                </div>
+                <div class="col-lg-8">
+                    <div class="row h-100">
+                        <div class="col-12 d-flex align-items-center justify-content-center bg-primary">
+                            <div id="footer">
+                                <img src="/logo.png" width="450" alt="Logo s2ipartner"/>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex flex-column justify-content-around" style="background-color: #6A00FF; padding-top: 50px;">
+                            <h2 class="text-center text-light">LA QUALITÉS SANS COMPROMIS</h2>
+                            <div class="row text-light">
+                                <div class="col-sm-6" style="font-size: 21px;">
+                                    <div style="border-left: 2px solid white;  padding-left: 20px;">
+                                        <p><strong>Paris</strong><br/>
+                                        142 Rue de Rivoli<br/>
+                                        75001, Paris<br/>
+                                        Tél : 01 47 02 31 46<br/>
+                                        Mail : contact@s2ipartner.com</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6" style="font-size: 21px;">
+                                    <div style="border-left: 2px solid white;  padding-left: 20px;">
+                                        <p><strong>Vélizy - Villacoublay</strong><br/>
+                                        16, av Morane Saulnier<br/>
+                                        78140 Vélzy-Villacoublay<br/>
+                                        Tél : 01 83 81 95 62<br/>
+                                        Mail : contact@s2ipartner.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

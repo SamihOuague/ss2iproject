@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CandidatController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>Etes vous sure de vouloir supprimer ce candidat ?</h2>
+        {{form(deleteForm)}}
+    </div>
+{% endblock %}

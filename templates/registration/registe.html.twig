@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { 
+            margin: 1em auto; 
+            max-width: 800px; 
+            width: 95%; 
+            font: 18px/1.5 sans-serif; 
+        }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+    <div style="height: 100%;" class="example-wrapper d-flex justify-content-center align-items-center">
+        <div class="bg-dark text-light" style="border-radius: 5px; padding: 25px; width: 450px; margin-top: 100px;">
+            <h1 class="text-center text-light">S'inscrire</h1>
+            {% for flashError in app.flashes('verify_email_error') %}
+                <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+            {% endfor %}
+            {{ form_start(registrationForm) }}
+                {{ form_row(registrationForm.email, {
+                    label: false
+                }) }}
+                <br/>
+                {{ form_row(registrationForm.plainPassword.first, {
+                    label: false
+                }) }}
+                <br/>
+                {{ form_row(registrationForm.plainPassword.second, {
+                    label: false
+                }) }}
+                <br/>
+                <p>Le mot de doit contenir au moin :</p>
+                <ul>
+                    <li>8 à 15 caractères</li>
+                    <li>1 chiffre</li>
+                    <li>1 majuscule</li>
+                    <li>1 caractère spécial</li>
+                </ul>
+                <br/>
+                <div class="d-flex align-items-start">
+                    {{ form_row(registrationForm.agreeTerms, {
+                        label: false
+                    }) }}
+                    <span style="margin-left: 10px;">J'ai lu et accepté <a href="#">les conditions générales d'utilisation de S2ipartner</a></span>
+                </div>
+                <br/>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button class="btn btn-lg btn-outline-warning" type="submit">
+                        S'inscrire
+                    </button>
+                    <small>
+                        <a class="text-warning" href="{{ path('app_login') }}">Vous avez deja un compte ?</a>
+                    </small>
+                </div>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+{% endblock %}

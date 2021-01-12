@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CandidatController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Candidats</h1>
+    <div class="jumbotron">
+        <h2>{{candidat.customer.first.firstname}} {{candidat.customer.first.lastname}}</h2>
+        <p>Vehiculer : {{(candidat.customer.first.vehicle) ? "Oui" : "Non"}}</p>
+        <p>Poste : {{candidat.customer.first.role}}</p>
+        <p>Contrat rechercher : {{candidat.customer.first.contract}}</p>
+        {% if (candidat.customer.first.cv) %}
+            <a href="/uploads/cv/{{candidat.customer.first.cv}}" style="margin-top: 25px;" class="btn btn-outline-success">Consulter le CV</a>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{mission.title}}{% endblock %}
+{% block body %}
+<div class="container">
+    {% if (mission) %}
+        <div class="jumbotron">
+            <h1>{{mission.title}}</h1>
+            <p style="margin: 25px;">{{mission.describ}}</p>
+            <p style="margin: 25px;">Tarif : {{mission.price}}$</p>
+            <p style="margin: 25px;">Duree : {{mission.durate}} Jours</p>
+            <a href="/mission/{{mission.id}}/postuler" class="btn btn-outline-primary">Postuler</a>
+        <div>
+    {% endif %}
+</div>
+{% endblock %}
