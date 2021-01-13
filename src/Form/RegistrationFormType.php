@@ -56,7 +56,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 15,
                     ]),
                     new Regex([
-                        "pattern" => "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&]{8,}$/",
+                        "pattern" => "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_-])[A-Za-z\d@$!%*?&_-]{8,}$/",
                         "message" => "Le mot de passe ne respecte les regles indique."
                     ])
                 ],
