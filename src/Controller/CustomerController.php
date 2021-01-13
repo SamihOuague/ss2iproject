@@ -184,6 +184,7 @@ class CustomerController extends AbstractController
                 }
             }
             $entityManager = $this->getDoctrine()->getManager();
+            $this->security->getUser()->setIsVerified(true);
             $profil->setUser($this->security->getUser());
             $entityManager->persist($data);
             $entityManager->flush();
