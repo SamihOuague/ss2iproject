@@ -99,7 +99,7 @@ class ClientController extends AbstractController
             $data = $form->getData();
             $entityManager = $this->getDoctrine()->getManager();
             $profil->setUser($this->security->getUser());
-            $user->setIsVerified(true);
+            $profil->setIsVerified(true);
             $entityManager->persist($data);
             $entityManager->flush();
             return $this->redirectToRoute('home');
