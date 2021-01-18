@@ -84,7 +84,7 @@ class __TwigTemplate_67566a0d21afe2e3d61815c3f048178765f6630b8774e4476bde76cf220
                 <div class=\"container\" style=\"padding: 100px 20px;\">
                     <div class=\"row\">
                         <div class=\"col-lg-6\">
-                            <img src=\"image19.png\"/>
+                            <img src=\"image19.png\" width=\"100%\"/>
                         </div>
                         <div class=\"col-lg-6 text-dark\" style=\"font-family: 'Montserrat'; font-weight: 300; font-size: 23px;\">
                             <h2 class=\"text-primary\">Support DESK</h2>
@@ -250,7 +250,7 @@ class __TwigTemplate_67566a0d21afe2e3d61815c3f048178765f6630b8774e4476bde76cf220
                 <div class=\"container\" style=\"padding: 100px 20px;\">
                     <div class=\"row\">
                         <div class=\"col-lg-6\">
-                            <img src=\"image19.png\"/>
+                            <img src=\"image19.png\" width=\"100%\"/>
                         </div>
                         <div class=\"col-lg-6 text-dark\" style=\"font-family: 'Montserrat'; font-weight: 300; font-size: 23px;\">
                             <h2 class=\"text-primary\">Support DESK</h2>

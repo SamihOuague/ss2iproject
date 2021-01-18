@@ -8,7 +8,7 @@
             <h2 class="text-center">Cliquer sur le lien envoyer par mail pour verifier votre adresse email et acceder au contenue.</h2>
         {% elseif (client or manager) %}
             <div class="container">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between" style="padding-top: 50px;">
                     <a class="btn btn-outline-dark" style="margin-bottom: 10px;" href="{{ path('mission') }}">Publier une nouvelle offre</a>
                     {% if (manager) %}
                         {{form_start(form)}}

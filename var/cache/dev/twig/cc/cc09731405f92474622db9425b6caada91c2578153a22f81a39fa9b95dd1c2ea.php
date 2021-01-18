@@ -59,8 +59,8 @@ class __TwigTemplate_e882f96b31e80edd5240171272742667661cbc5c5541d3ba4353352fe14
         $this->displayBlock('stylesheets', $context, $blocks);
         // line 13
         echo "    </head>
-    <body class=\"bg-light\" style=\"min-height: 80%; padding-top: 150px;\">
-      <nav class=\"navbar navbar-expand-lg fixed-top navbar-dark bg-dark\">
+    <body class=\"bg-light\" style=\"min-height: 80%;\">
+      <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
         <a class=\"navbar-brand font-weight-bold\" href=\"";
         // line 16
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
@@ -241,8 +241,8 @@ class __TwigTemplate_e882f96b31e80edd5240171272742667661cbc5c5541d3ba4353352fe14
         <title>S2IPartner</title>
         {% block stylesheets %}{% endblock %}
     </head>
-    <body class=\"bg-light\" style=\"min-height: 80%; padding-top: 150px;\">
-      <nav class=\"navbar navbar-expand-lg fixed-top navbar-dark bg-dark\">
+    <body class=\"bg-light\" style=\"min-height: 80%;\">
+      <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
         <a class=\"navbar-brand font-weight-bold\" href=\"{{ path('home') }}\">
           <img src=\"/logo.png\" alt=\"logo s2ipartner\" width=\"250\"/>
         </a>

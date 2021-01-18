@@ -97,7 +97,7 @@ class __TwigTemplate_31904c48a88d2e15424bc697ebef084c0f5baee1bda40eea971fc4d743e
 (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new RuntimeError('Variable "client" does not exist.', 9, $this->source); })()) || (isset($context["manager"]) || array_key_exists("manager", $context) ? $context["manager"] : (function () { throw new RuntimeError('Variable "manager" does not exist.', 9, $this->source); })()))) {
                 // line 10
                 echo "            <div class=\"container\">
-                <div class=\"d-flex justify-content-between\">
+                <div class=\"d-flex justify-content-between\" style=\"padding-top: 50px;\">
                     <a class=\"btn btn-outline-dark\" style=\"margin-bottom: 10px;\" href=\"";
                 // line 12
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("mission");
@@ -401,7 +401,7 @@ class __TwigTemplate_31904c48a88d2e15424bc697ebef084c0f5baee1bda40eea971fc4d743e
             <h2 class=\"text-center\">Cliquer sur le lien envoyer par mail pour verifier votre adresse email et acceder au contenue.</h2>
         {% elseif (client or manager) %}
             <div class=\"container\">
-                <div class=\"d-flex justify-content-between\">
+                <div class=\"d-flex justify-content-between\" style=\"padding-top: 50px;\">
                     <a class=\"btn btn-outline-dark\" style=\"margin-bottom: 10px;\" href=\"{{ path('mission') }}\">Publier une nouvelle offre</a>
                     {% if (manager) %}
                         {{form_start(form)}}
