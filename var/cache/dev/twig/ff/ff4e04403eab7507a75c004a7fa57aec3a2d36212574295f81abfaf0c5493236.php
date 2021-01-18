@@ -25,7 +25,6 @@ class __TwigTemplate_21d1f279ef80282d7c83bdc146d89d09015b4818a52f1560952074d00b9
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -52,25 +51,6 @@ class __TwigTemplate_21d1f279ef80282d7c83bdc146d89d09015b4818a52f1560952074d00b9
 
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-    }
-
-    // line 2
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["mission"]) || array_key_exists("mission", $context) ? $context["mission"] : (function () { throw new RuntimeError('Variable "mission" does not exist.', 2, $this->source); })()), "title", [], "any", false, false, false, 2), "html", null, true);
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
     }
 
@@ -102,19 +82,25 @@ class __TwigTemplate_21d1f279ef80282d7c83bdc146d89d09015b4818a52f1560952074d00b9
             <p style=\"margin: 25px;\">Tarif : ";
             // line 9
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["mission"]) || array_key_exists("mission", $context) ? $context["mission"] : (function () { throw new RuntimeError('Variable "mission" does not exist.', 9, $this->source); })()), "price", [], "any", false, false, false, 9), "html", null, true);
-            echo "\$</p>
+            echo " €</p>
             <p style=\"margin: 25px;\">Duree : ";
             // line 10
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["mission"]) || array_key_exists("mission", $context) ? $context["mission"] : (function () { throw new RuntimeError('Variable "mission" does not exist.', 10, $this->source); })()), "durate", [], "any", false, false, false, 10), "html", null, true);
             echo " Jours</p>
-            <a href=\"/mission/";
+            ";
             // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["mission"]) || array_key_exists("mission", $context) ? $context["mission"] : (function () { throw new RuntimeError('Variable "mission" does not exist.', 11, $this->source); })()), "id", [], "any", false, false, false, 11), "html", null, true);
-            echo "/postuler\" class=\"btn btn-outline-primary\">Postuler</a>
-        <div>
+            if ((isset($context["postule"]) || array_key_exists("postule", $context) ? $context["postule"] : (function () { throw new RuntimeError('Variable "postule" does not exist.', 11, $this->source); })())) {
+                // line 12
+                echo "                <a href=\"/mission/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["mission"]) || array_key_exists("mission", $context) ? $context["mission"] : (function () { throw new RuntimeError('Variable "mission" does not exist.', 12, $this->source); })()), "id", [], "any", false, false, false, 12), "html", null, true);
+                echo "/postuler\" class=\"btn btn-outline-primary\">Postuler</a>
+            ";
+            }
+            // line 14
+            echo "        <div>
     ";
         }
-        // line 14
+        // line 16
         echo "</div>
 ";
         
@@ -137,22 +123,24 @@ class __TwigTemplate_21d1f279ef80282d7c83bdc146d89d09015b4818a52f1560952074d00b9
 
     public function getDebugInfo()
     {
-        return array (  118 => 14,  112 => 11,  108 => 10,  104 => 9,  100 => 8,  96 => 7,  93 => 6,  91 => 5,  88 => 4,  78 => 3,  59 => 2,  36 => 1,);
+        return array (  104 => 16,  100 => 14,  94 => 12,  92 => 11,  88 => 10,  84 => 9,  80 => 8,  76 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
-{% block title %}{{mission.title}}{% endblock %}
+
 {% block body %}
 <div class=\"container\">
     {% if (mission) %}
         <div class=\"jumbotron\">
             <h1>{{mission.title}}</h1>
             <p style=\"margin: 25px;\">{{mission.describ}}</p>
-            <p style=\"margin: 25px;\">Tarif : {{mission.price}}\$</p>
+            <p style=\"margin: 25px;\">Tarif : {{mission.price}} €</p>
             <p style=\"margin: 25px;\">Duree : {{mission.durate}} Jours</p>
-            <a href=\"/mission/{{mission.id}}/postuler\" class=\"btn btn-outline-primary\">Postuler</a>
+            {% if (postule) %}
+                <a href=\"/mission/{{mission.id}}/postuler\" class=\"btn btn-outline-primary\">Postuler</a>
+            {% endif %}
         <div>
     {% endif %}
 </div>

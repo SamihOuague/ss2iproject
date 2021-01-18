@@ -128,16 +128,16 @@ class CustomerController extends AbstractController
                         ],
                         "attr" => [
                             "class" => "form-control",
-                            "style" => "margin-top: 25px;"
+                            "style" => "margin-top: 25px;",
                         ]
                     ])
                     ->add("siret", TextType::class, [
                         "required" => false,
                         "label" => false,
                         "attr" => [
-                            "class" => "form-control",
+                            "class" => "form-control d-none",
                             "placeholder" => "Numero de siret",
-                            "style" => "margin: 25px 0;"
+                            "style" => "margin: 25px 0;",
                         ]
                     ])
                     ->add("cv", FileType::class, [

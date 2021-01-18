@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1 class="text-center text-muted" style="margin: 50px 0; font-family: 'Montserrat'; font-size: 48px;">Nous contacter</h1>
+<div class="container" style="padding: 25px 0;">
+    <div class="d-flex justify-content-center">
+        <div class="w-75" style="height: 600px;">
+            {{form(form)}}
+        </div>
+    </div>
+</div>
+<div class="container-fluid" id="contact" style="height: 800px;">
+    <div class="row h-100">
+        <div class="col-lg-4" style="background-image: url('/louvre.png'); background-position: center;">
+        </div>
+        <div class="col-lg-8">
+            <div class="row h-100">
+                <div class="col-12 d-flex align-items-center justify-content-center bg-primary">
+                    <div id="footer">
+                        <img src="/logo.png" width="100%" alt="Logo s2ipartner"/>
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column justify-content-around" style="background-color: #6A00FF; padding-top: 50px;">
+                    <h2 class="text-center text-light">LA QUALITÉS SANS COMPROMIS</h2>
+                    <div class="row text-light">
+                        <div class="col-sm-6" style="font-size: 21px;">
+                            <div style="border-left: 2px solid white;  padding-left: 20px;">
+                                <p><strong>Paris</strong><br/>
+                                142 Rue de Rivoli<br/>
+                                75001, Paris<br/>
+                                Tél : 01 47 02 31 46<br/>
+                                Mail : contact@s2ipartner.com</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" style="font-size: 21px;">
+                            <div style="border-left: 2px solid white;  padding-left: 20px;">
+                                <p><strong>Vélizy - Villacoublay</strong><br/>
+                                16, av Morane Saulnier<br/>
+                                78140 Vélzy-Villacoublay<br/>
+                                Tél : 01 83 81 95 62<br/>
+                                Mail : contact@s2ipartner.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

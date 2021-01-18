@@ -3,13 +3,22 @@
 {% block title %}S2IPartner{% endblock %}
 
 {% block body %}
-
     {% if (app.user) %}
         {% if not app.user.isVerified %}
             <h2 class="text-center">Cliquer sur le lien envoyer par mail pour verifier votre adresse email et acceder au contenue.</h2>
         {% elseif (client or manager) %}
             <div class="container">
-                <a class="btn btn-outline-dark" style="margin-bottom: 10px;" href="{{ path('mission') }}">Proposer une mission</a>
+                <div class="d-flex justify-content-between">
+                    <a class="btn btn-outline-dark" style="margin-bottom: 10px;" href="{{ path('mission') }}">Publier une nouvelle offre</a>
+                    {% if (manager) %}
+                        {{form_start(form)}}
+                            <div class="d-flex">
+                                {{form_row(form.recherche)}}
+                                {{form_row(form.submit)}}
+                            </div>
+                        {{form_end(form)}}
+                    {% endif %}
+                </div>
                 {% for mission in missions %}
                     <div class="jumbotron">
                         <h2>{{mission.title}}</h2>
@@ -34,7 +43,8 @@
                             </small>
                         </p>
                         <p>Duree : {{mission.durate}} jours</p>
-                        <p>Tarif journalier : {{mission.price}}$</p>
+                        <p>Tarif journalier : {{mission.price}} €</p>
+                        <p><a href="/mission/{{mission.id}}" class="btn btn-outline-primary">En savoir plus</a></p>
                     </div>
                 {% endfor %}
             </div>
@@ -43,55 +53,111 @@
         {% endif %}
     {% else %}
         <div class="container-fluid" 
-            style="background-image: url('/smokebg.png'); 
-                    height: 300px;
+            style="background-image: linear-gradient(transparent, black), url('/bg.jpg'); 
+                    height: 650px;
                     background-size: cover;
                     background-position: center;
                     margin-top: -40px;
-                    background-repeat: no-repeat;">
+                    background-repeat: no-repeat;
+                    border-radius: 0px 0px 250px 0;">
             <div class="h-100 d-flex justify-content-center align-items-center">
-                <div style="background-color: rgba(255, 255, 255, 0.4); padding: 20px;">
-                    <img src="/logo.png" width="450" alt="Logo s2ipartner"/>
+                <div style="background-color: rgba(255, 255, 255, 0.3); padding: 50px 20px;">
+                    <img src="logo.png" alt="logo s2ipartner" width="100%"/>
                 </div>
             </div>
         </div>
-        <div class="container" style="padding-top: 50px;">
-            <h1 class="text-center font-weight-bold" style="color: #6A00FF;">UN SERVICE <br/>A LA HAUTEUR DE VOS EXIGEANCES</h1>
-            <div class="row">
-                <div class="col-lg-6 text-dark" style="font-size: 18px;">
-                    <div class="d-flex align-items-center" style="min-height: 150px;">
-                        <img width="250" src="/logo.png" alt="logo s2ipartner" />
+        <div style="background-color: black;" id="about">
+            <div class="bg-light" style="border-radius: 250px 0px 0px 250px;">
+                <div class="container" style="padding: 50px 20px;">
+                    <div class="row">
+                        <div class="col-lg-12 text-dark" style="font-family: 'Montserrat'; font-weight: 300; font-size: 23px;">
+                            <div class="d-flex">
+                                <img width="250" style="margin: 25px 0;" src="/logo.png" alt="logo s2ipartner" />
+                            </div>
+                            <p><strong class="font-weight-bold">S2I PARTNER</strong> est le fournisseur privilégié des petites et moyennes entreprise et un partenaire de choix des intégrateurs et constructeurs dans le cadre de <strong class="font-weight-bold">projets de grandes envergures</strong>.<br/><br/>
+                            Offrant une gamme de services étendue dans le domaine de l’<strong class="font-weight-bold">IT</strong> sur tout le territoire national.<br/>
+                            Nous prenons en charge tout ou partie des <strong class="font-weight-bold">projets informatiques</strong> de l’étude à la réalisation, jusqu’à la livraison finale.</p>
+                            <br/>
+                            <p class="alert alert-success">Créée en <strong class="font-weight-bold">2013</strong></p>
+                            <p class="alert alert-success">Implantée à <strong class="font-weight-bold">Paris</strong>, avec un service opérationnel basé à <strong class="font-weight-bold">Vélizy-Villacoublay</strong></p>
+                            <p class="alert alert-success">Des intervenants et <strong class="font-weight-bold">techniciens expérimentés</strong> et rigoureux</p>
+                            <p class="alert alert-success">Une capacité d'intervention sur tout <strong class="font-weight-bold">le territoire et en Belgique Wallon.</strong></p>
+                        </div>
                     </div>
-                    <p><strong>S2I PARTNER</strong> est le fournisseur privilégié des petites et moyennes entreprise et un partenaire de choix des intégrateurs et constructeurs dans le cadre de <strong>projets de grandes envergures</strong>.<br/>
-                    Offrant une gamme de services étendue dans le domaine de l’<strong>IT</strong> sur tout le territoire national.<br/>
-                    Nous prenons en charge tout ou partie des <strong>projets informatiques</strong> de l’étude à la réalisation, jusqu’à la livraison finale.</p>
-                    <p class="alert alert-success">Créée en <strong>2013</strong></p>
-                    <p class="alert alert-success">Implantée à <strong>Paris</strong>, avec un service opérationnel basé à <strong>Vélizy-Villacoublay</strong></p>
-                    <p class="alert alert-success">Des intervenants et <strong>techniciens expérimentés</strong> et rigoureux</p>
-                    <p class="alert alert-success">Une capacité d'intervention sur tout <strong>le territoire et en Belgique Wallon.</strong></p>
-                </div>
-                <div class="col-lg-6" style="font-size: 21px;">
-                    <div class="d-flex align-items-center" style="min-height: 150px;">
-                        <h2 class="text-center text-success" style=""><strong>Un interlocuteur unique</strong> pour toutes vos demandes de services </h2>
-                    </div>
-                    <p>❖La prise en charge, la gestion, la planification  et le pilotage de vos projets,</p>
-                    <p>❖L’accompagnement de vos unités dans leurs  projets de migration de postes utilisateurs,  mobiles ainsi que la téléphonie,</p>
-                    <p>❖L'intégration de solutions et applications métier Formation des collaborateurs à la prise en main  des applications et solutions Microsoft,</p>
-                    <p>❖Déploiement de service Helpdesk et  support de proximité,</p>
-                    <p>❖Analyse, conseil et reporting, La gestion  efficiente de vos assets.</p>
                 </div>
             </div>
         </div>
-        <div class="container-fluid" style="height: 800px; margin-top: 50px;">
+        <div class="bg-light" id="service">
+            <div class="h-100" style="background-image: linear-gradient(black, transparent, black), url('pro.jpg');
+                                        background-size: cover;
+                                        border-radius: 0 250px 250px 0;
+                                        overflow: hidden;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-light" style="font-size: 32px; padding: 100px 50px; background-color: rgba(0, 0, 0, 0.4);">
+                            <div class="d-flex align-items-center" style="min-height: 150px;">
+                                <h2 class="text-center text-success" style="font-size: 42px; font-family: 'Montserrat';"><strong>Un interlocuteur unique</strong> pour toutes vos demandes de services </h2>
+                            </div>
+                            <p>❖ La prise en charge, la gestion, la planification  et le pilotage de vos projets.</p>
+                            <p>❖ L’accompagnement de vos unités dans leurs  projets de migration de postes utilisateurs,  mobiles ainsi que la téléphonie.</p>
+                            <p>❖ L'intégration de solutions et applications métier Formation des collaborateurs à la prise en main  des applications et solutions Microsoft.</p>
+                            <p>❖ Déploiement de service Helpdesk et  support de proximité.</p>
+                            <p>❖ Analyse, conseil et reporting, La gestion  efficiente de vos assets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background-color: black;">
+            <div class="bg-light h-100 d-flex align-items-center" style="border-radius: 250px 0 0 0;">
+                <div class="container" style="padding: 100px 0;">
+                    <div class="row">
+                        <div class="col-lg-4" style="min-height: 500px; border-bottom: 5px solid #d4edda; margin-top: 50px;">
+                            <h4 class="alert alert-success">End user</h4>
+                            <p class="text-justify" style="font-size: 21px; font-family: 'Montserrat'; margin: 15px;">Concentrez-vous sur votre cœur de
+                            métier, nous soutenons la
+                            productivité de vos unités en
+                            prenant en charge la configuration,
+                            le déploiement, la gestion des
+                            postes de travail ainsi que le
+                            support et la proximité
+                            informatique auprès de vos
+                            collaborateurs.</p>
+                        </div>
+                        <div class="col-lg-4" style="min-height: 500px; border-bottom: 5px solid #cce5ff; margin-top: 50px;">
+                            <h4 class="alert alert-primary">Technologie et infrastructure</h4>
+                            <p class="text-justify" style="font-size: 21px; font-family: 'Montserrat'; margin: 15px;">Grâce à nos solutions développées en
+                            interne, nous vous permettons de
+                            bénéficier de services et technologies
+                            puissantes pour l'automatisation, le
+                            déploiement et l'exploitation de vos
+                            environnements et infrastructure SI.</p>
+                        </div>
+                        <div class="col-lg-4" style="min-height: 500px; border-bottom: 5px solid #fff3cd; margin-top: 50px;">
+                            <h4 class="alert alert-warning">Conseil et management</h4>
+                            <p class="text-justify" style="font-size: 21px; font-family: 'Montserrat'; margin: 15px;">Nous accompagnions votre
+                            transformation numérique grâce
+                            une solide expérience en matière
+                            de management des services et
+                            projets IT, une forte expertise et
+                            des certifications reconnues dans
+                            des domaines clés, appuyées par de
+                            solides partenariats avec les grands
+                            acteurs du monde technologique.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="contact" style="height: 800px;">
             <div class="row h-100">
                 <div class="col-lg-4" style="background-image: url('/louvre.png'); background-position: center;">
-
                 </div>
                 <div class="col-lg-8">
                     <div class="row h-100">
                         <div class="col-12 d-flex align-items-center justify-content-center bg-primary">
                             <div id="footer">
-                                <img src="/logo.png" width="450" alt="Logo s2ipartner"/>
+                                <img src="/logo.png" width="100%" alt="Logo s2ipartner"/>
                             </div>
                         </div>
                         <div class="col-12 d-flex flex-column justify-content-around" style="background-color: #6A00FF; padding-top: 50px;">

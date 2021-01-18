@@ -108,11 +108,18 @@ class MissionController extends AbstractController
         if (!($this->security->getUser() && $this->security->getUser()->getCustomer())) {
             return $this->redirectToRoute('home');
         }
+        $isCandidat = false;
         $mission = $this->getDoctrine()
                         ->getRepository(Mission::class)
                         ->find($id);
+        foreach ($mission->getCandidats() as $key => $value) {
+            if ($value->getCustomer()->first()->getId() == $this->security->getUser()->getCustomer()->getId())
+                $isCandidat = true;
+        }
+        
         return $this->render("mission/mission.html.twig", [
-            'mission' => $mission
+            'mission' => $mission,
+            'postule' => !($isCandidat)
         ]);
     }
 

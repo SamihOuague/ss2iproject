@@ -25,7 +25,6 @@ class __TwigTemplate_616bbb8f3086730f5ec35ff1abb191a2e3014ddfaa1708c2cddc602eeb4
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -56,25 +55,6 @@ class __TwigTemplate_616bbb8f3086730f5ec35ff1abb191a2e3014ddfaa1708c2cddc602eeb4
     }
 
     // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Hello CandidatController!";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,36 +64,36 @@ class __TwigTemplate_616bbb8f3086730f5ec35ff1abb191a2e3014ddfaa1708c2cddc602eeb4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 4
         echo "<style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
 <div class=\"example-wrapper\">
-    <h1>Candidats : ✅</h1>
+    <h1 style=\"margin: 50px 0;\">Liste des candidats</h1>
 
     ";
-        // line 14
+        // line 12
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["candidats"]) || array_key_exists("candidats", $context) ? $context["candidats"] : (function () { throw new RuntimeError('Variable "candidats" does not exist.', 14, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["candidats"]) || array_key_exists("candidats", $context) ? $context["candidats"] : (function () { throw new RuntimeError('Variable "candidats" does not exist.', 12, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["candidat"]) {
-            // line 15
+            // line 13
             echo "        <div class=\"alert alert-primary d-flex justify-content-between\" style=\"padding: 15px;\">
             <h3>";
-            // line 16
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["candidat"], "customer", [], "any", false, false, false, 16), "first", [], "any", false, false, false, 16), "lastname", [], "any", false, false, false, 16), "html", null, true);
+            // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["candidat"], "customer", [], "any", false, false, false, 14), "first", [], "any", false, false, false, 14), "lastname", [], "any", false, false, false, 14), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["candidat"], "customer", [], "any", false, false, false, 16), "first", [], "any", false, false, false, 16), "firstname", [], "any", false, false, false, 16), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["candidat"], "customer", [], "any", false, false, false, 14), "first", [], "any", false, false, false, 14), "firstname", [], "any", false, false, false, 14), "html", null, true);
             echo "</h3>
             <div>
                 <a class=\"btn btn-outline-success\" href=\"/candidat/";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["candidat"], "id", [], "any", false, false, false, 18), "html", null, true);
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["candidat"], "id", [], "any", false, false, false, 16), "html", null, true);
             echo "/profil\">Consulter</a>
                 <a class=\"btn btn-outline-danger\" href=\"/candidat/";
-            // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["candidat"], "id", [], "any", false, false, false, 19), "html", null, true);
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["candidat"], "id", [], "any", false, false, false, 17), "html", null, true);
             echo "/delete\">Supprimer</a>
             </div>
         </div>
@@ -142,14 +122,12 @@ class __TwigTemplate_616bbb8f3086730f5ec35ff1abb191a2e3014ddfaa1708c2cddc602eeb4
 
     public function getDebugInfo()
     {
-        return array (  116 => 19,  112 => 18,  105 => 16,  102 => 15,  98 => 14,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  96 => 17,  92 => 16,  85 => 14,  82 => 13,  78 => 12,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
-
-{% block title %}Hello CandidatController!{% endblock %}
 
 {% block body %}
 <style>
@@ -158,7 +136,7 @@ class __TwigTemplate_616bbb8f3086730f5ec35ff1abb191a2e3014ddfaa1708c2cddc602eeb4
 </style>
 
 <div class=\"example-wrapper\">
-    <h1>Candidats : ✅</h1>
+    <h1 style=\"margin: 50px 0;\">Liste des candidats</h1>
 
     {% for candidat in candidats %}
         <div class=\"alert alert-primary d-flex justify-content-between\" style=\"padding: 15px;\">

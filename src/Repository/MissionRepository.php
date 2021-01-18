@@ -19,6 +19,18 @@ class MissionRepository extends ServiceEntityRepository
         parent::__construct($registry, Mission::class);
     }
 
+
+    public function search($title)
+    {
+        return $this->createQueryBuilder('Mission')
+                                ->where("Mission.title LIKE :title")
+                                ->orWhere("Mission.describ LIKE :describ")
+                                ->setParameter("title", "%".$title."%")
+                                ->setParameter("describ", "%".$title."%")
+                                ->orderBy("Mission.id", "DESC")
+                                ->getQuery()
+                                ->execute();
+    }
     // /**
     //  * @return Mission[] Returns an array of Mission objects
     //  */

@@ -10,4 +10,13 @@
     <h1 class="text-muted text-center">Profil</h1>
     {{form(profilForm)}}
 </div>
+<script>
+    $("#form_contract").change((e) => {
+        if (e.target.value == 3) {
+            $("#form_siret").removeClass("d-none");
+        } else {
+            $("#form_siret").addClass("d-none");
+        }
+    });
+</script>
 {% endblock %}

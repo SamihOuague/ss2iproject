@@ -25,7 +25,6 @@ class __TwigTemplate_6887d19a91a621101a84b54aa1fcdb436c7cd5839efa272f320f64e3078
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -56,25 +55,6 @@ class __TwigTemplate_6887d19a91a621101a84b54aa1fcdb436c7cd5839efa272f320f64e3078
     }
 
     // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Hello ProfilController!";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,20 +64,20 @@ class __TwigTemplate_6887d19a91a621101a84b54aa1fcdb436c7cd5839efa272f320f64e3078
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 4
         echo "<style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
 <div class=\"example-wrapper d-flex justify-content-center text-center\">
-    <div class=\"d-flex justify-content-around flex-column\" style=\"height: 200px; width: 450px; padding: 20px; background-color: #6A00FF; border-radius: 5px;\">
+    <div class=\"d-flex justify-content-around flex-column bg-dark\" style=\"height: 200px; width: 450px; padding: 20px; border-radius: 5px;\">
         <a class=\"btn btn-outline-warning\" href=\"";
-        // line 13
+        // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client");
         echo "\">Je cherche un technicien</a>
         <a class=\"btn btn-outline-warning\" href=\"";
-        // line 14
+        // line 12
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("customer");
         echo "\">Je suis un technicien</a>
     </div>
@@ -123,14 +103,12 @@ class __TwigTemplate_6887d19a91a621101a84b54aa1fcdb436c7cd5839efa272f320f64e3078
 
     public function getDebugInfo()
     {
-        return array (  101 => 14,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  81 => 12,  77 => 11,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
-
-{% block title %}Hello ProfilController!{% endblock %}
 
 {% block body %}
 <style>
@@ -139,7 +117,7 @@ class __TwigTemplate_6887d19a91a621101a84b54aa1fcdb436c7cd5839efa272f320f64e3078
 </style>
 
 <div class=\"example-wrapper d-flex justify-content-center text-center\">
-    <div class=\"d-flex justify-content-around flex-column\" style=\"height: 200px; width: 450px; padding: 20px; background-color: #6A00FF; border-radius: 5px;\">
+    <div class=\"d-flex justify-content-around flex-column bg-dark\" style=\"height: 200px; width: 450px; padding: 20px; border-radius: 5px;\">
         <a class=\"btn btn-outline-warning\" href=\"{{ path('client') }}\">Je cherche un technicien</a>
         <a class=\"btn btn-outline-warning\" href=\"{{ path('customer') }}\">Je suis un technicien</a>
     </div>

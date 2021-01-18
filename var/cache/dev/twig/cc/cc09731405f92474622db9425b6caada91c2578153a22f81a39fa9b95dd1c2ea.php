@@ -27,7 +27,6 @@ class __TwigTemplate_e882f96b31e80edd5240171272742667661cbc5c5541d3ba4353352fe14
         $this->parent = false;
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
             'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
@@ -49,19 +48,21 @@ class __TwigTemplate_e882f96b31e80edd5240171272742667661cbc5c5541d3ba4353352fe14
     <head>
         <meta charset=\"UTF-8\">
         <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">
-        <title>";
-        // line 6
-        $this->displayBlock('title', $context, $blocks);
-        echo "</title>
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css\" integrity=\"sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==\" crossorigin=\"anonymous\" />
+        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\">
+        <link href=\"https://fonts.googleapis.com/css2?family=Montserrat&display=swap\" rel=\"stylesheet\">
+        <link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap\" rel=\"stylesheet\">
+        <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>
+        <title>S2IPartner</title>
         ";
-        // line 7
+        // line 12
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 8
+        // line 13
         echo "    </head>
     <body class=\"bg-light\" style=\"min-height: 80%; padding-top: 150px;\">
       <nav class=\"navbar navbar-expand-lg fixed-top navbar-dark bg-dark\">
         <a class=\"navbar-brand font-weight-bold\" href=\"";
-        // line 11
+        // line 16
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\">
           <img src=\"/logo.png\" alt=\"logo s2ipartner\" width=\"250\"/>
@@ -71,42 +72,60 @@ class __TwigTemplate_e882f96b31e80edd5240171272742667661cbc5c5541d3ba4353352fe14
         </button>
   
         <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-          <ul class=\"navbar-nav ml-auto text-dark\">
+          <ul class=\"navbar-nav ml-auto text-dark\" style=\"font-family: 'Montserrat';\">
             ";
-        // line 20
-        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 20, $this->source); })()), "user", [], "any", false, false, false, 20)) {
-            // line 21
+        // line 25
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 25, $this->source); })()), "user", [], "any", false, false, false, 25)) {
+            // line 26
             echo "              <li class=\"nav-item\">
                 <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"";
-            // line 22
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-            echo "\">CONNEXION</a>
+            // line 27
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+            echo "\">HOME</a>
               </li>
               <li class=\"nav-item\">
                 <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"";
-            // line 25
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
-            echo "\">INSCRIPTION</a>
+            // line 30
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("about");
+            echo "\">A PROPOS</a>
+              </li>
+              <li class=\"nav-item\">
+                <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"";
+            // line 33
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("service");
+            echo "\">NOS SERVICES</a>
+              </li>
+              <li class=\"nav-item\">
+                <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"";
+            // line 36
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
+            echo "\">CONTACT</a>
+              </li>
+              <li class=\"nav-item\">
+                <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"";
+            // line 39
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\"><i class=\"fas fa-user\"></i></a>
               </li>
             ";
         } else {
-            // line 28
+            // line 42
             echo "              <li class=\"nav-item\">
                 <div class=\"dropdown\">
                   <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                    Menu
+                    <i class=\"fas fa-user\"></i>
                   </button>
                   <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"dropdownMenuButton\">
                     <a class=\"dropdown-item\" href=\"";
-            // line 34
+            // line 48
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-            echo "\">Home</a>
+            echo "\">Tableau de bord</a>
                     <a class=\"dropdown-item\" href=\"";
-            // line 35
+            // line 49
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("profil");
-            echo "\">Profil</a>
-                    <a class=\"dropdown-item\" href=\"";
-            // line 36
+            echo "\">Mon profil</a>
+                    <a class=\"dropdown-item text-danger font-weight-bold\" href=\"";
+            // line 50
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Deconnexion</a>
                   </div>
@@ -114,19 +133,18 @@ class __TwigTemplate_e882f96b31e80edd5240171272742667661cbc5c5541d3ba4353352fe14
               </li>
             ";
         }
-        // line 41
+        // line 55
         echo "          </ul>
         </div>
       </nav>
       ";
-        // line 44
+        // line 58
         $this->displayBlock('body', $context, $blocks);
-        // line 45
+        // line 59
         echo "      ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 46
-        echo "      <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>
-      <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\" crossorigin=\"anonymous\"></script>
+        // line 60
+        echo "      <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\" crossorigin=\"anonymous\"></script>
       <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\" crossorigin=\"anonymous\"></script>
     </body>
 </html>
@@ -139,26 +157,7 @@ class __TwigTemplate_e882f96b31e80edd5240171272742667661cbc5c5541d3ba4353352fe14
 
     }
 
-    // line 6
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Welcome!";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 7
+    // line 12
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -176,7 +175,7 @@ class __TwigTemplate_e882f96b31e80edd5240171272742667661cbc5c5541d3ba4353352fe14
 
     }
 
-    // line 44
+    // line 58
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -194,7 +193,7 @@ class __TwigTemplate_e882f96b31e80edd5240171272742667661cbc5c5541d3ba4353352fe14
 
     }
 
-    // line 45
+    // line 59
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -224,7 +223,7 @@ class __TwigTemplate_e882f96b31e80edd5240171272742667661cbc5c5541d3ba4353352fe14
 
     public function getDebugInfo()
     {
-        return array (  198 => 45,  180 => 44,  162 => 7,  143 => 6,  128 => 46,  125 => 45,  123 => 44,  118 => 41,  110 => 36,  106 => 35,  102 => 34,  94 => 28,  88 => 25,  82 => 22,  79 => 21,  77 => 20,  65 => 11,  60 => 8,  58 => 7,  54 => 6,  47 => 1,);
+        return array (  197 => 59,  179 => 58,  161 => 12,  147 => 60,  144 => 59,  142 => 58,  137 => 55,  129 => 50,  125 => 49,  121 => 48,  113 => 42,  107 => 39,  101 => 36,  95 => 33,  89 => 30,  83 => 27,  80 => 26,  78 => 25,  66 => 16,  61 => 13,  59 => 12,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -234,7 +233,12 @@ class __TwigTemplate_e882f96b31e80edd5240171272742667661cbc5c5541d3ba4353352fe14
     <head>
         <meta charset=\"UTF-8\">
         <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css\" integrity=\"sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==\" crossorigin=\"anonymous\" />
+        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\">
+        <link href=\"https://fonts.googleapis.com/css2?family=Montserrat&display=swap\" rel=\"stylesheet\">
+        <link href=\"https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap\" rel=\"stylesheet\">
+        <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>
+        <title>S2IPartner</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body class=\"bg-light\" style=\"min-height: 80%; padding-top: 150px;\">
@@ -247,24 +251,33 @@ class __TwigTemplate_e882f96b31e80edd5240171272742667661cbc5c5541d3ba4353352fe14
         </button>
   
         <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-          <ul class=\"navbar-nav ml-auto text-dark\">
+          <ul class=\"navbar-nav ml-auto text-dark\" style=\"font-family: 'Montserrat';\">
             {% if not (app.user) %}
               <li class=\"nav-item\">
-                <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"{{path('app_login')}}\">CONNEXION</a>
+                <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"{{ path('home') }}\">HOME</a>
               </li>
               <li class=\"nav-item\">
-                <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"{{path('app_register')}}\">INSCRIPTION</a>
+                <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"{{ path('about') }}\">A PROPOS</a>
+              </li>
+              <li class=\"nav-item\">
+                <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"{{ path('service') }}\">NOS SERVICES</a>
+              </li>
+              <li class=\"nav-item\">
+                <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"{{ path('contact') }}\">CONTACT</a>
+              </li>
+              <li class=\"nav-item\">
+                <a class=\"nav-link\" style=\"font-size: 20px;\" href=\"{{path('app_login')}}\"><i class=\"fas fa-user\"></i></a>
               </li>
             {% else %}
               <li class=\"nav-item\">
                 <div class=\"dropdown\">
                   <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                    Menu
+                    <i class=\"fas fa-user\"></i>
                   </button>
                   <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"dropdownMenuButton\">
-                    <a class=\"dropdown-item\" href=\"{{ path('home') }}\">Home</a>
-                    <a class=\"dropdown-item\" href=\"{{ path('profil') }}\">Profil</a>
-                    <a class=\"dropdown-item\" href=\"{{ path('app_logout') }}\">Deconnexion</a>
+                    <a class=\"dropdown-item\" href=\"{{ path('home') }}\">Tableau de bord</a>
+                    <a class=\"dropdown-item\" href=\"{{ path('profil') }}\">Mon profil</a>
+                    <a class=\"dropdown-item text-danger font-weight-bold\" href=\"{{ path('app_logout') }}\">Deconnexion</a>
                   </div>
                 </div>
               </li>
@@ -274,7 +287,6 @@ class __TwigTemplate_e882f96b31e80edd5240171272742667661cbc5c5541d3ba4353352fe14
       </nav>
       {% block body %}{% endblock %}
       {% block javascripts %}{% endblock %}
-      <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>
       <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js\" integrity=\"sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q\" crossorigin=\"anonymous\"></script>
       <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\" integrity=\"sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl\" crossorigin=\"anonymous\"></script>
     </body>

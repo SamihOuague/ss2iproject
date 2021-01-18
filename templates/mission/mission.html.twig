@@ -6,9 +6,11 @@
         <div class="jumbotron">
             <h1>{{mission.title}}</h1>
             <p style="margin: 25px;">{{mission.describ}}</p>
-            <p style="margin: 25px;">Tarif : {{mission.price}}$</p>
+            <p style="margin: 25px;">Tarif : {{mission.price}} €</p>
             <p style="margin: 25px;">Duree : {{mission.durate}} Jours</p>
-            <a href="/mission/{{mission.id}}/postuler" class="btn btn-outline-primary">Postuler</a>
+            {% if (postule) %}
+                <a href="/mission/{{mission.id}}/postuler" class="btn btn-outline-primary">Postuler</a>
+            {% endif %}
         <div>
     {% endif %}
 </div>
