@@ -70,11 +70,26 @@ class MissionController extends AbstractController
                             "style" => "margin-top: 25px;"
                         ]
                     ])
-                    ->add("durate", IntegerType::class, [
+                    ->add("inter", ChoiceType::class, [
                         "label" => false,
+                        "required" => true,
+                        "choices" => [
+                            "Paiement" => null,
+                            "par jour" => "Journalier",
+                            "par mois" => "Mensuel",
+                            "par an" => "Annuel"
+                        ],
                         "attr" => [
                             "class" => "form-control",
-                            "placeholder" => "Duree (En jour)",
+                            "style" => "margin-top: 25px;",
+                        ]
+                    ])
+                    ->add("durate", IntegerType::class, [
+                        "label" => false,
+                        "required" => false,
+                        "attr" => [
+                            "class" => "form-control",
+                            "placeholder" => "Duree (En jours)",
                             "style" => "margin-top: 25px;"
                         ]
                     ])

@@ -41,7 +41,7 @@ class Mission
     private $place;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $durate;
 
@@ -54,6 +54,11 @@ class Mission
      * @ORM\ManyToMany(targetEntity=Candidat::class, mappedBy="mission")
      */
     private $candidats;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $inter;
 
     public function __construct()
     {
@@ -165,6 +170,18 @@ class Mission
         if ($this->candidats->removeElement($candidat)) {
             $candidat->removeMission($this);
         }
+
+        return $this;
+    }
+
+    public function getInter(): ?string
+    {
+        return $this->inter;
+    }
+
+    public function setInter(string $inter): self
+    {
+        $this->inter = $inter;
 
         return $this;
     }
