@@ -229,9 +229,10 @@ class __TwigTemplate_31904c48a88d2e15424bc697ebef084c0f5baee1bda40eea971fc4d743e
             echo "    ";
         } else {
             // line 55
-            echo "        <div class=\"container-fluid\" 
+            echo "        <div class=\"container-fluid\"
+            id=\"headbg\"
             style=\"background-image: linear-gradient(transparent, black), url('/bg.jpg'); 
-                    height: 650px;
+                    min-height: 650px;
                     background-size: cover;
                     background-position: center;
                     margin-top: -40px;
@@ -364,6 +365,10 @@ class __TwigTemplate_31904c48a88d2e15424bc697ebef084c0f5baee1bda40eea971fc4d743e
                 </div>
             </div>
         </div>
+        <script>
+            console.log(window.innerHeight)
+            \$(\"#headbg\").css(\"height\", window.innerHeight);
+        </script>
     ";
         }
         
@@ -445,9 +450,10 @@ class __TwigTemplate_31904c48a88d2e15424bc697ebef084c0f5baee1bda40eea971fc4d743e
             <p>Profil not completed, complet it <a href=\"{{ path('profil') }}\">here</p></p>
         {% endif %}
     {% else %}
-        <div class=\"container-fluid\" 
+        <div class=\"container-fluid\"
+            id=\"headbg\"
             style=\"background-image: linear-gradient(transparent, black), url('/bg.jpg'); 
-                    height: 650px;
+                    min-height: 650px;
                     background-size: cover;
                     background-position: center;
                     margin-top: -40px;
@@ -580,6 +586,10 @@ class __TwigTemplate_31904c48a88d2e15424bc697ebef084c0f5baee1bda40eea971fc4d743e
                 </div>
             </div>
         </div>
+        <script>
+            console.log(window.innerHeight)
+            \$(\"#headbg\").css(\"height\", window.innerHeight);
+        </script>
     {% endif %}
 {% endblock %}", "home/index.html.twig", "/home/souaguen/Bureau/s2ipartner/templates/home/index.html.twig");
     }
