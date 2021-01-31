@@ -65,7 +65,7 @@ class __TwigTemplate_049726fca61942b3e20b712990f61567c1ec9754e5439398582050c946f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
-        echo "<div class=\"container\" style=\"font-family: 'Montserrat';\">
+        echo "<div class=\"container\" style=\"font-family: 'Montserrat'; margin-top: 50px;\">
 <br/>
 <br/>
 <p style=\"margin-bottom: 0.28cm; line-height: 108%\">PRIVACY POLICY</p>
@@ -497,6 +497,15 @@ sans préavis.</font></font></p>
                 </div>
             </div>
         </div>
+        <script>
+    \$(\"#nav\").animate({
+        backgroundColor: \"rgba(255,255,255,0.7)\"
+    });
+    \$(\".nav-link\").animate({
+        color: \"black\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+</script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -525,7 +534,7 @@ sans préavis.</font></font></p>
     {
         return new Source("{% extends 'base.html.twig' %}
 {% block body %}
-<div class=\"container\" style=\"font-family: 'Montserrat';\">
+<div class=\"container\" style=\"font-family: 'Montserrat'; margin-top: 50px;\">
 <br/>
 <br/>
 <p style=\"margin-bottom: 0.28cm; line-height: 108%\">PRIVACY POLICY</p>
@@ -957,6 +966,15 @@ sans préavis.</font></font></p>
                 </div>
             </div>
         </div>
+        <script>
+    \$(\"#nav\").animate({
+        backgroundColor: \"rgba(255,255,255,0.7)\"
+    });
+    \$(\".nav-link\").animate({
+        color: \"black\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+</script>
 {% endblock %}", "home/privacypolicy.html.twig", "/home/souaguen/Bureau/s2ipartner/templates/home/privacypolicy.html.twig");
     }
 }

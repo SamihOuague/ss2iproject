@@ -55,6 +55,11 @@ class Mission
      */
     private $candidats;
 
+    /**
+     * @ORM\Column(type="string", length=15)
+     */
+    private $inter;
+
     public function __construct()
     {
         $this->candidats = new ArrayCollection();

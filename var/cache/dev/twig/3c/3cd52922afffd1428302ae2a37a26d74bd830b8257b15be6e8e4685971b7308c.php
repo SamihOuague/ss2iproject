@@ -72,14 +72,15 @@ class __TwigTemplate_bd1ed38590adbdac0ec69d650bdbd884f887a8de37fa52ab9eff127457f
                     background-position: center;
                     margin-top: -40px;
                     background-repeat: no-repeat;
-                    border-radius: 0px 0px 250px 0;\">
+                    border-radius: 0px 0px 250px 0;\"
+                    id=\"headbg\">
             <div class=\"h-100 d-flex justify-content-center align-items-center\">
                 <div style=\"background-color: rgba(255, 255, 255, 0.1); padding: 50px 50px;\">
                     <h1 class=\"text-center font-weight-bold text-warning\" style=\"font-size: 62px; font-family: 'Montserrat';\">A PROPOS DE <br/><strong class=\"text-danger\">S2IPartner</strong></h1>
                 </div>
             </div>
         </div>
-        <div style=\"background-color: black;\" id=\"about\">
+        <div style=\"background-color: black;\" id=\"limit\">
             <div class=\"bg-light\" style=\"border-radius: 250px 0px 0px 250px;\">
                 <div class=\"container\" style=\"padding: 100px 20px;\">
                     <div class=\"row\">
@@ -218,44 +219,9 @@ class __TwigTemplate_bd1ed38590adbdac0ec69d650bdbd884f887a8de37fa52ab9eff127457f
                 </div>
             </div>
         </div>
-        <div class=\"container-fluid\" id=\"contact\" style=\"height: 800px;\">
-            <div class=\"row h-100\">
-                <div class=\"col-lg-4\" style=\"background-image: url('/louvre.png'); background-position: center;\">
-                </div>
-                <div class=\"col-lg-8\">
-                    <div class=\"row h-100\">
-                        <div class=\"col-12 d-flex align-items-center justify-content-center bg-primary\">
-                            <div id=\"footer\">
-                                <img src=\"/logo.png\" width=\"100%\" alt=\"Logo s2ipartner\"/>
-                            </div>
-                        </div>
-                        <div class=\"col-12 d-flex flex-column justify-content-around\" style=\"background-color: #6A00FF; padding-top: 50px;\">
-                            <h2 class=\"text-center text-light\">LA QUALITÉS SANS COMPROMIS</h2>
-                            <div class=\"row text-light\">
-                                <div class=\"col-sm-6\" style=\"font-size: 21px;\">
-                                    <div style=\"border-left: 2px solid white;  padding-left: 20px;\">
-                                        <p><strong>Paris</strong><br/>
-                                        142 Rue de Rivoli<br/>
-                                        75001, Paris<br/>
-                                        Tél : 01 47 02 31 46<br/>
-                                        Mail : contact@s2ipartner.com</p>
-                                    </div>
-                                </div>
-                                <div class=\"col-sm-6\" style=\"font-size: 21px;\">
-                                    <div style=\"border-left: 2px solid white;  padding-left: 20px;\">
-                                        <p><strong>Vélizy - Villacoublay</strong><br/>
-                                        16, av Morane Saulnier<br/>
-                                        78140 Vélzy-Villacoublay<br/>
-                                        Tél : 01 83 81 95 62<br/>
-                                        Mail : contact@s2ipartner.com</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <script>
+            \$(\"#headbg\").css(\"height\", window.innerHeight);
+        </script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -291,14 +257,15 @@ class __TwigTemplate_bd1ed38590adbdac0ec69d650bdbd884f887a8de37fa52ab9eff127457f
                     background-position: center;
                     margin-top: -40px;
                     background-repeat: no-repeat;
-                    border-radius: 0px 0px 250px 0;\">
+                    border-radius: 0px 0px 250px 0;\"
+                    id=\"headbg\">
             <div class=\"h-100 d-flex justify-content-center align-items-center\">
                 <div style=\"background-color: rgba(255, 255, 255, 0.1); padding: 50px 50px;\">
                     <h1 class=\"text-center font-weight-bold text-warning\" style=\"font-size: 62px; font-family: 'Montserrat';\">A PROPOS DE <br/><strong class=\"text-danger\">S2IPartner</strong></h1>
                 </div>
             </div>
         </div>
-        <div style=\"background-color: black;\" id=\"about\">
+        <div style=\"background-color: black;\" id=\"limit\">
             <div class=\"bg-light\" style=\"border-radius: 250px 0px 0px 250px;\">
                 <div class=\"container\" style=\"padding: 100px 20px;\">
                     <div class=\"row\">
@@ -437,44 +404,9 @@ class __TwigTemplate_bd1ed38590adbdac0ec69d650bdbd884f887a8de37fa52ab9eff127457f
                 </div>
             </div>
         </div>
-        <div class=\"container-fluid\" id=\"contact\" style=\"height: 800px;\">
-            <div class=\"row h-100\">
-                <div class=\"col-lg-4\" style=\"background-image: url('/louvre.png'); background-position: center;\">
-                </div>
-                <div class=\"col-lg-8\">
-                    <div class=\"row h-100\">
-                        <div class=\"col-12 d-flex align-items-center justify-content-center bg-primary\">
-                            <div id=\"footer\">
-                                <img src=\"/logo.png\" width=\"100%\" alt=\"Logo s2ipartner\"/>
-                            </div>
-                        </div>
-                        <div class=\"col-12 d-flex flex-column justify-content-around\" style=\"background-color: #6A00FF; padding-top: 50px;\">
-                            <h2 class=\"text-center text-light\">LA QUALITÉS SANS COMPROMIS</h2>
-                            <div class=\"row text-light\">
-                                <div class=\"col-sm-6\" style=\"font-size: 21px;\">
-                                    <div style=\"border-left: 2px solid white;  padding-left: 20px;\">
-                                        <p><strong>Paris</strong><br/>
-                                        142 Rue de Rivoli<br/>
-                                        75001, Paris<br/>
-                                        Tél : 01 47 02 31 46<br/>
-                                        Mail : contact@s2ipartner.com</p>
-                                    </div>
-                                </div>
-                                <div class=\"col-sm-6\" style=\"font-size: 21px;\">
-                                    <div style=\"border-left: 2px solid white;  padding-left: 20px;\">
-                                        <p><strong>Vélizy - Villacoublay</strong><br/>
-                                        16, av Morane Saulnier<br/>
-                                        78140 Vélzy-Villacoublay<br/>
-                                        Tél : 01 83 81 95 62<br/>
-                                        Mail : contact@s2ipartner.com</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <script>
+            \$(\"#headbg\").css(\"height\", window.innerHeight);
+        </script>
 {% endblock %}", "home/about.html.twig", "/home/souaguen/Bureau/s2ipartner/templates/home/about.html.twig");
     }
 }

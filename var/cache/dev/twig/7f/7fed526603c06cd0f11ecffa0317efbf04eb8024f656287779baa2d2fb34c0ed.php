@@ -65,7 +65,7 @@ class __TwigTemplate_1bcef9a3542771c1119dbd2d54331aeadb7ccae430480510aa1c1d84f89
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 5
-        echo "    <div class=\"container\">
+        echo "    <div class=\"container\" id=\"headbg\" style=\"margin-top: 100px;\">
         <h2>Etes vous sure de vouloir postuler pour cette mission ?</h2>
         <h3>(";
         // line 7
@@ -76,6 +76,16 @@ class __TwigTemplate_1bcef9a3542771c1119dbd2d54331aeadb7ccae430480510aa1c1d84f89
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["postuleForm"]) || array_key_exists("postuleForm", $context) ? $context["postuleForm"] : (function () { throw new RuntimeError('Variable "postuleForm" does not exist.', 8, $this->source); })()), 'form');
         echo "
     </div>
+    <script>
+    \$(\"#nav\").animate({
+        backgroundColor: \"rgba(255,255,255,0.7)\"
+    });
+    \$(\".nav-link\").animate({
+        color: \"black\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+    \$(\"#headbg\").css(\"height\", window.innerHeight - 250);
+</script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -106,11 +116,21 @@ class __TwigTemplate_1bcef9a3542771c1119dbd2d54331aeadb7ccae430480510aa1c1d84f89
 
 
 {% block body %}
-    <div class=\"container\">
+    <div class=\"container\" id=\"headbg\" style=\"margin-top: 100px;\">
         <h2>Etes vous sure de vouloir postuler pour cette mission ?</h2>
         <h3>({{title}})</h3>
         {{form(postuleForm)}}
     </div>
+    <script>
+    \$(\"#nav\").animate({
+        backgroundColor: \"rgba(255,255,255,0.7)\"
+    });
+    \$(\".nav-link\").animate({
+        color: \"black\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+    \$(\"#headbg\").css(\"height\", window.innerHeight - 250);
+</script>
 {% endblock %}", "mission/postuler.html.twig", "/home/souaguen/Bureau/s2ipartner/templates/mission/postuler.html.twig");
     }
 }

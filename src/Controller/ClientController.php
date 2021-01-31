@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 use App\Entity\Client;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Request;
@@ -51,15 +52,15 @@ class ClientController extends AbstractController
                         "label" => false,
                         "attr" => [
                             "class" => "form-control",
-                            "placeholder" => "Prenom",
+                            "placeholder" => "Prénom",
                             "style" => "margin-top: 25px;"
                         ]
                     ])
-                    ->add("phone", TextType::class, [
+                    ->add("phone", TelType::class, [
                         "label" => false,
                         "attr" => [
                             "class" => "form-control",
-                            "placeholder" => "Numero de telephone",
+                            "placeholder" => "Numéro de téléphone",
                             "style" => "margin-top: 25px;"
                         ]
                     ])
@@ -83,7 +84,7 @@ class ClientController extends AbstractController
                         "label" => false,
                         "attr" => [
                             "class" => "form-control",
-                            "placeholder" => "Societe",
+                            "placeholder" => "Nom de l'entreprise",
                             "style" => "margin-top: 25px;"
                         ]
                     ])

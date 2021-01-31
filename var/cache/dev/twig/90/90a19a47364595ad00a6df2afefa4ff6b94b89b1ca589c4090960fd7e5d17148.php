@@ -65,55 +65,22 @@ class __TwigTemplate_f69c8e12330444e934a278b2509f7cd21be0274e4f4efe6002bab867503
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 3
-        echo "<h1 class=\"text-center text-muted\" style=\"margin: 50px 0; font-family: 'Montserrat'; font-size: 48px;\">Nous contacter</h1>
-<div class=\"container\" style=\"padding: 25px 0;\">
+        echo "<div class=\"container\" style=\"padding: 25px 0; margin-top: 150px;\">
     <div class=\"d-flex justify-content-center\">
         <div class=\"w-75\" style=\"height: 600px;\">
             ";
-        // line 7
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 7, $this->source); })()), 'form');
+        // line 6
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 6, $this->source); })()), 'form');
         echo "
         </div>
     </div>
 </div>
-<div class=\"container-fluid\" id=\"contact\" style=\"height: 800px;\">
-    <div class=\"row h-100\">
-        <div class=\"col-lg-4\" style=\"background-image: url('/louvre.png'); background-position: center;\">
-        </div>
-        <div class=\"col-lg-8\">
-            <div class=\"row h-100\">
-                <div class=\"col-12 d-flex align-items-center justify-content-center bg-primary\">
-                    <div id=\"footer\">
-                        <img src=\"/logo.png\" width=\"100%\" alt=\"Logo s2ipartner\"/>
-                    </div>
-                </div>
-                <div class=\"col-12 d-flex flex-column justify-content-around\" style=\"background-color: #6A00FF; padding-top: 50px;\">
-                    <h2 class=\"text-center text-light\">LA QUALITÉS SANS COMPROMIS</h2>
-                    <div class=\"row text-light\">
-                        <div class=\"col-sm-6\" style=\"font-size: 21px;\">
-                            <div style=\"border-left: 2px solid white;  padding-left: 20px;\">
-                                <p><strong>Paris</strong><br/>
-                                142 Rue de Rivoli<br/>
-                                75001, Paris<br/>
-                                Tél : 01 47 02 31 46<br/>
-                                Mail : contact@s2ipartner.com</p>
-                            </div>
-                        </div>
-                        <div class=\"col-sm-6\" style=\"font-size: 21px;\">
-                            <div style=\"border-left: 2px solid white;  padding-left: 20px;\">
-                                <p><strong>Vélizy - Villacoublay</strong><br/>
-                                16, av Morane Saulnier<br/>
-                                78140 Vélzy-Villacoublay<br/>
-                                Tél : 01 83 81 95 62<br/>
-                                Mail : contact@s2ipartner.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<script>
+    \$(\".nav-link\").animate({
+        color: \"#343a40\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+</script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -135,59 +102,26 @@ class __TwigTemplate_f69c8e12330444e934a278b2509f7cd21be0274e4f4efe6002bab867503
 
     public function getDebugInfo()
     {
-        return array (  74 => 7,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  73 => 6,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 {% block body %}
-<h1 class=\"text-center text-muted\" style=\"margin: 50px 0; font-family: 'Montserrat'; font-size: 48px;\">Nous contacter</h1>
-<div class=\"container\" style=\"padding: 25px 0;\">
+<div class=\"container\" style=\"padding: 25px 0; margin-top: 150px;\">
     <div class=\"d-flex justify-content-center\">
         <div class=\"w-75\" style=\"height: 600px;\">
             {{form(form)}}
         </div>
     </div>
 </div>
-<div class=\"container-fluid\" id=\"contact\" style=\"height: 800px;\">
-    <div class=\"row h-100\">
-        <div class=\"col-lg-4\" style=\"background-image: url('/louvre.png'); background-position: center;\">
-        </div>
-        <div class=\"col-lg-8\">
-            <div class=\"row h-100\">
-                <div class=\"col-12 d-flex align-items-center justify-content-center bg-primary\">
-                    <div id=\"footer\">
-                        <img src=\"/logo.png\" width=\"100%\" alt=\"Logo s2ipartner\"/>
-                    </div>
-                </div>
-                <div class=\"col-12 d-flex flex-column justify-content-around\" style=\"background-color: #6A00FF; padding-top: 50px;\">
-                    <h2 class=\"text-center text-light\">LA QUALITÉS SANS COMPROMIS</h2>
-                    <div class=\"row text-light\">
-                        <div class=\"col-sm-6\" style=\"font-size: 21px;\">
-                            <div style=\"border-left: 2px solid white;  padding-left: 20px;\">
-                                <p><strong>Paris</strong><br/>
-                                142 Rue de Rivoli<br/>
-                                75001, Paris<br/>
-                                Tél : 01 47 02 31 46<br/>
-                                Mail : contact@s2ipartner.com</p>
-                            </div>
-                        </div>
-                        <div class=\"col-sm-6\" style=\"font-size: 21px;\">
-                            <div style=\"border-left: 2px solid white;  padding-left: 20px;\">
-                                <p><strong>Vélizy - Villacoublay</strong><br/>
-                                16, av Morane Saulnier<br/>
-                                78140 Vélzy-Villacoublay<br/>
-                                Tél : 01 83 81 95 62<br/>
-                                Mail : contact@s2ipartner.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<script>
+    \$(\".nav-link\").animate({
+        color: \"#343a40\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+</script>
 {% endblock %}", "home/contact.html.twig", "/home/souaguen/Bureau/s2ipartner/templates/home/contact.html.twig");
     }
 }

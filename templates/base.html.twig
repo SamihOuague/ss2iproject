@@ -7,38 +7,50 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script
+			    src="https://code.jquery.com/jquery-3.5.1.js"
+			    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+			    crossorigin="anonymous"></script>
+        <script
+			    src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+			    integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
+			    crossorigin="anonymous"></script>
+		
         <title>S2IPartner</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body class="bg-light" style="min-height: 80%;">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav id="nav" class="navbar navbar-expand-lg navbar-light fixed-top">
         <a class="navbar-brand font-weight-bold" href="{{ path('home') }}">
-          <img src="/logo.png" alt="logo s2ipartner" width="250"/>
+          <img src="/logo_white.png" alt="logo s2ipartner" id="logo" width="150"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="width: 80px">
           <span class="navbar-toggler-icon"></span>
         </button>
-  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto text-dark" style="font-family: 'Montserrat';">
+        <div class="collapse navbar-collapse"  id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto text-center" style="font-family: 'Montserrat'; color: white; font-weight: 600;">
             {% if not (app.user) %}
               <li class="nav-item">
-                <a class="nav-link" style="font-size: 20px;" href="{{ path('home') }}">HOME</a>
+                <a class="nav-link" style="font-size: 20px; color: white;" href="{{ path('home') }}">ACCUEIL</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style="font-size: 20px;" href="{{ path('about') }}">A PROPOS</a>
+                <a class="nav-link" style="font-size: 20px; color: white;" href="{{ path('about') }}">QUI SOMMES-NOUS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style="font-size: 20px;" href="{{ path('service') }}">NOS SERVICES</a>
+                <a class="nav-link" style="font-size: 20px; color: white;" href="{{ path('service') }}">NOS SERVICES</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style="font-size: 20px;" href="{{ path('contact') }}">CONTACT</a>
+                <a class="nav-link" style="font-size: 20px; color: white;" href="{{ path('contact') }}">CONTACT</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style="font-size: 20px;" href="{{path('app_login')}}"><i class="fas fa-user"></i></a>
+                <a class="nav-link" style="font-size: 20px; color: white;" href="{{path('app_login')}}"><i class="fas fa-user"></i></a>
               </li>
             {% else %}
+              {% if app.user.email == "admin@s2ipartner.com" %}
+                <li class="nav-item">
+                  <a class="nav-link btn btn-outline-success text-success" href="/admin" style="margin: 0px 15px;">Administation</a>
+                </li>
+              {% endif %}
               <li class="nav-item">
                 <div class="dropdown">
                   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -56,7 +68,56 @@
         </div>
       </nav>
       {% block body %}{% endblock %}
+      <div class="container-fluid bg-dark" style="padding: 25px 15px; margin-top: 50px; opacity: 0.8;" id="contact">
+            <div class="row text-light">
+              <div class="col-lg-4 d-flex justify-content-center align-items-center">
+                <img src="/logo_white.png" alt="logo s2ipartner" id="logo" width="50%" style="margin: 25px 0;"/>
+              </div>
+              <div class="col-lg-4 col-sm-6" style="font-size: 21px;">
+                  <div style="border-left: 2px solid white;  padding-left: 20px;">
+                      <p><strong>Paris</strong><br/>
+                      142 Rue de Rivoli<br/>
+                      75001, Paris<br/>
+                      Tél : 01 47 02 31 46<br/>
+                      Mail : contact@s2ipartner.com</p>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-sm-6" style="font-size: 21px;">
+                  <div style="border-left: 2px solid white;  padding-left: 20px;">
+                      <p><strong>Vélizy - Villacoublay</strong><br/>
+                      16, av Morane Saulnier<br/>
+                      78140 Vélzy-Villacoublay<br/>
+                      Tél : 01 83 81 95 62<br/>
+                      Mail : contact@s2ipartner.com</p>
+                  </div>
+              </div>
+            </div>
+        </div>
       {% block javascripts %}{% endblock %}
+      <script>
+          let black = true;
+          $(window).scroll(() => {
+              if ($(window).scrollTop() >= $('#limit').position().top && black) {
+                  black = false;
+                  $("#nav").animate({
+                      backgroundColor: "rgba(255, 255, 255, 0.6)"
+                  });
+                  $(".nav-link").animate({
+                      color: "#343a40"
+                  });
+                  $("#logo")[0].src = "/logo.png";
+              } else if ($(window).scrollTop() < $('#limit').position().top && !black) {
+                  black = true;
+                  $("#nav").animate({
+                      backgroundColor: "rgba(255, 255, 255, 0.0)"
+                  });
+                  $(".nav-link").animate({
+                      color: "white"
+                  });
+                  $("#logo")[0].src = "/logo_white.png";
+              }
+          });
+      </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>

@@ -65,7 +65,7 @@ class __TwigTemplate_21d1f279ef80282d7c83bdc146d89d09015b4818a52f1560952074d00b9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "<div class=\"container\">
+        echo "<div class=\"container\" style=\"margin-top: 100px;\">
     ";
         // line 5
         if ((isset($context["mission"]) || array_key_exists("mission", $context) ? $context["mission"] : (function () { throw new RuntimeError('Variable "mission" does not exist.', 5, $this->source); })())) {
@@ -79,29 +79,36 @@ class __TwigTemplate_21d1f279ef80282d7c83bdc146d89d09015b4818a52f1560952074d00b9
             // line 8
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["mission"]) || array_key_exists("mission", $context) ? $context["mission"] : (function () { throw new RuntimeError('Variable "mission" does not exist.', 8, $this->source); })()), "describ", [], "any", false, false, false, 8), "html", null, true);
             echo "</p>
-            <p style=\"margin: 25px;\">Tarif : ";
+            <span style=\"margin: 25px; width: 200px; font-size: 18px;\" class=\"alert alert-secondary d-block text-center\">";
             // line 9
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["mission"]) || array_key_exists("mission", $context) ? $context["mission"] : (function () { throw new RuntimeError('Variable "mission" does not exist.', 9, $this->source); })()), "price", [], "any", false, false, false, 9), "html", null, true);
-            echo " €</p>
-            <p style=\"margin: 25px;\">Duree : ";
-            // line 10
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["mission"]) || array_key_exists("mission", $context) ? $context["mission"] : (function () { throw new RuntimeError('Variable "mission" does not exist.', 10, $this->source); })()), "durate", [], "any", false, false, false, 10), "html", null, true);
-            echo " Jours</p>
+            echo "€ ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["mission"]) || array_key_exists("mission", $context) ? $context["mission"] : (function () { throw new RuntimeError('Variable "mission" does not exist.', 9, $this->source); })()), "inter", [], "any", false, false, false, 9), "html", null, true);
+            echo "</span>
             ";
-            // line 11
-            if ((isset($context["postule"]) || array_key_exists("postule", $context) ? $context["postule"] : (function () { throw new RuntimeError('Variable "postule" does not exist.', 11, $this->source); })())) {
-                // line 12
+            // line 10
+            if ((isset($context["postule"]) || array_key_exists("postule", $context) ? $context["postule"] : (function () { throw new RuntimeError('Variable "postule" does not exist.', 10, $this->source); })())) {
+                // line 11
                 echo "                <a href=\"/mission/";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["mission"]) || array_key_exists("mission", $context) ? $context["mission"] : (function () { throw new RuntimeError('Variable "mission" does not exist.', 12, $this->source); })()), "id", [], "any", false, false, false, 12), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["mission"]) || array_key_exists("mission", $context) ? $context["mission"] : (function () { throw new RuntimeError('Variable "mission" does not exist.', 11, $this->source); })()), "id", [], "any", false, false, false, 11), "html", null, true);
                 echo "/postuler\" class=\"btn btn-outline-primary\">Postuler</a>
             ";
             }
-            // line 14
-            echo "        <div>
+            // line 13
+            echo "        </div>
     ";
         }
-        // line 16
+        // line 15
         echo "</div>
+<script>
+    \$(\"#nav\").animate({
+        backgroundColor: \"rgba(255,255,255,0.7)\"
+    });
+    \$(\".nav-link\").animate({
+        color: \"black\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+</script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -123,7 +130,7 @@ class __TwigTemplate_21d1f279ef80282d7c83bdc146d89d09015b4818a52f1560952074d00b9
 
     public function getDebugInfo()
     {
-        return array (  104 => 16,  100 => 14,  94 => 12,  92 => 11,  88 => 10,  84 => 9,  80 => 8,  76 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  102 => 15,  98 => 13,  92 => 11,  90 => 10,  84 => 9,  80 => 8,  76 => 7,  73 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -131,19 +138,27 @@ class __TwigTemplate_21d1f279ef80282d7c83bdc146d89d09015b4818a52f1560952074d00b9
         return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-<div class=\"container\">
+<div class=\"container\" style=\"margin-top: 100px;\">
     {% if (mission) %}
         <div class=\"jumbotron\">
             <h1>{{mission.title}}</h1>
             <p style=\"margin: 25px;\">{{mission.describ}}</p>
-            <p style=\"margin: 25px;\">Tarif : {{mission.price}} €</p>
-            <p style=\"margin: 25px;\">Duree : {{mission.durate}} Jours</p>
+            <span style=\"margin: 25px; width: 200px; font-size: 18px;\" class=\"alert alert-secondary d-block text-center\">{{mission.price}}€ {{mission.inter}}</span>
             {% if (postule) %}
                 <a href=\"/mission/{{mission.id}}/postuler\" class=\"btn btn-outline-primary\">Postuler</a>
             {% endif %}
-        <div>
+        </div>
     {% endif %}
 </div>
+<script>
+    \$(\"#nav\").animate({
+        backgroundColor: \"rgba(255,255,255,0.7)\"
+    });
+    \$(\".nav-link\").animate({
+        color: \"black\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+</script>
 {% endblock %}", "mission/mission.html.twig", "/home/souaguen/Bureau/s2ipartner/templates/mission/mission.html.twig");
     }
 }

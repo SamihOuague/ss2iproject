@@ -411,4 +411,15 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
         return parent::setIsVerified($isVerified);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function getIsVerified(): ?bool
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIsVerified', []);
+
+        return parent::getIsVerified();
+    }
+
 }

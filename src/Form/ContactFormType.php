@@ -22,7 +22,7 @@ class ContactFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => 'Adresse e-mail (*)',
-                    'style' => 'margin: 15px 0px; border: none; border-bottom: 2px solid #ffc107; background-color: rgba(12, 12, 17, 0.1); border-radius: 0px;'
+                    'style' => 'margin: 15px 0px; border: none; border-bottom: 2px solid #343a40; background-color: rgba(12, 12, 17, 0.1); border-radius: 0px;'
                 ]
             ])
             ->add('sujet', TextType::class, [
@@ -31,7 +31,7 @@ class ContactFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => 'Sujet (*)',
-                    'style' => 'margin: 15px 0px; border: none; border-bottom: 2px solid #ffc107; background-color: rgba(12, 12, 17, 0.1); border-radius: 0px;'
+                    'style' => 'margin: 15px 0px; border: none; border-bottom: 2px solid #343a40; background-color: rgba(12, 12, 17, 0.1); border-radius: 0px;'
                 ]
             ])
             ->add('phone', TelType::class, [
@@ -40,7 +40,7 @@ class ContactFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => 'Numero de telephone',
-                    'style' => 'margin: 15px 0px; border: none; border-bottom: 2px solid #ffc107; background-color: rgba(12, 12, 17, 0.1); border-radius: 0px;'
+                    'style' => 'margin: 15px 0px; border: none; border-bottom: 2px solid #343a40; background-color: rgba(12, 12, 17, 0.1); border-radius: 0px;'
                 ]
             ])
             ->add('message', TextareaType::class, [
@@ -49,12 +49,12 @@ class ContactFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => 'Message (*)',
-                    'style' => 'margin: 15px 0px; border: none; border-bottom: 2px solid #ffc107; background-color: rgba(12, 12, 17, 0.1); border-radius: 0px;'
+                    'style' => 'margin: 15px 0px; border: none; border-bottom: 2px solid #343a40; background-color: rgba(12, 12, 17, 0.1); border-radius: 0px;'
                 ]
             ])
             ->add('Envoyer', SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn btn-warning',
+                    'class' => 'btn btn-outline-dark',
                     'style' => "margin: 15px 0px; font-size: 25px; font-family: 'Montserrat'; padding: 10px 50px;"
                 ]
             ])

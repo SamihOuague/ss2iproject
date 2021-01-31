@@ -1,17 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container">
+<div class="container" style="margin-top: 100px;">
     {% if (mission) %}
         <div class="jumbotron">
             <h1>{{mission.title}}</h1>
             <p style="margin: 25px;">{{mission.describ}}</p>
-            <p style="margin: 25px;">Tarif : {{mission.price}} €</p>
-            <p style="margin: 25px;">Duree : {{mission.durate}} Jours</p>
+            <span style="margin: 25px; width: 200px; font-size: 18px;" class="alert alert-secondary d-block text-center">{{mission.price}}€ {{mission.inter}}</span>
             {% if (postule) %}
                 <a href="/mission/{{mission.id}}/postuler" class="btn btn-outline-primary">Postuler</a>
             {% endif %}
-        <div>
+        </div>
     {% endif %}
 </div>
+<script>
+    $("#nav").animate({
+        backgroundColor: "rgba(255,255,255,0.7)"
+    });
+    $(".nav-link").animate({
+        color: "black"
+    });
+    $("#logo")[0].src = "/logo.png";
+</script>
 {% endblock %}

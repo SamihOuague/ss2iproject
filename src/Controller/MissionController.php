@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -11,7 +10,10 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Security\Core\Security;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use App\Entity\Mission;
 use App\Entity\Candidat;
 
@@ -42,7 +44,7 @@ class MissionController extends AbstractController
                         "label" => false,
                         "attr" => [
                             "class" => "form-control",
-                            "placeholder" => "Titre ",
+                            "placeholder" => "Titre *",
                             "style" => "margin-top: 25px;"
                         ]
                     ])
@@ -50,7 +52,7 @@ class MissionController extends AbstractController
                         "label" => false,
                         "attr" => [
                             "class" => "form-control",
-                            "placeholder" => "Description",
+                            "placeholder" => "Description *",
                             "style" => "margin-top: 25px;"
                         ]
                     ])
@@ -58,7 +60,7 @@ class MissionController extends AbstractController
                         "label" => false,
                         "attr" => [
                             "class" => "form-control",
-                            "placeholder" => "Lieu ",
+                            "placeholder" => "Lieu *",
                             "style" => "margin-top: 25px;"
                         ]
                     ])
@@ -66,7 +68,7 @@ class MissionController extends AbstractController
                         "label" => false,
                         "attr" => [
                             "class" => "form-control",
-                            "placeholder" => "Tarif ",
+                            "placeholder" => "Tarif *",
                             "style" => "margin-top: 25px;"
                         ]
                     ])
@@ -74,10 +76,9 @@ class MissionController extends AbstractController
                         "label" => false,
                         "required" => true,
                         "choices" => [
-                            "Paiement" => null,
-                            "par jour" => "Journalier",
-                            "par mois" => "Mensuel",
-                            "par an" => "Annuel"
+                            "Journalier" => "par jour",
+                            "Mensuel" => "par mois",
+                            "Annuel" => "par an"
                         ],
                         "attr" => [
                             "class" => "form-control",
@@ -89,11 +90,11 @@ class MissionController extends AbstractController
                         "required" => false,
                         "attr" => [
                             "class" => "form-control",
-                            "placeholder" => "Duree (En jours)",
+                            "placeholder" => "Durée (En jours)",
                             "style" => "margin-top: 25px;"
                         ]
                     ])
-                    ->add("Complete", SubmitType::class, [
+                    ->add("Completer", SubmitType::class, [
                         "attr" => [
                             "class" => "btn btn-outline-success form-control",
                             "style" => "margin-top: 25px;"
@@ -141,7 +142,7 @@ class MissionController extends AbstractController
     /**
      * @Route("/mission/{id}/postuler")
      */
-    public function postuleMission(int $id, Request $request) : Response {
+    public function postuleMission(MailerInterface $mailer, int $id, Request $request) : Response {
         if (!($this->security->getUser() && $this->security->getUser()->getCustomer())) {
             return $this->redirectToRoute('home');
         }
@@ -167,6 +168,19 @@ class MissionController extends AbstractController
             $customer = $this->security->getUser()->getCustomer();
             $candidat->addMission($mission);
             $candidat->addCustomer($customer);
+            $email = (new Email())
+            ->from('souaguen96@gmail.com')
+            ->to('souaguen96@gmail.com')
+            //->cc('cc@example.com')
+            //->bcc('bcc@example.com')
+            ->replyTo('souaguen96@gmail.com')
+            ->priority(Email::PRIORITY_HIGH)
+            ->subject("Candidature")
+            ->text("Un candidat postule au poste : ". $mission->getTitle() ."\n". 
+                    "Nom : " . $customer->getLastname() ."\nPrenom : ". $customer->getFirstname() ."\nNumero : ". $customer->getPhone())
+            ->html("Un candidat postule au poste : ". $mission->getTitle() ."<br/>". 
+                    "Nom : " . $customer->getLastname() ."<br/>Prenom : ". $customer->getFirstname() ."<br/>Numero : ". $customer->getPhone());
+            $mailer->send($email);
             $entityManager->persist($candidat);
             $entityManager->flush();
             return $this->redirectToRoute('home');
@@ -269,12 +283,12 @@ class MissionController extends AbstractController
                         "label" => false,
                         "attr" => [
                             "class" => "form-control",
-                            "placeholder" => "Duree (En jour)",
+                            "placeholder" => "Durée (En jour)",
                             "style" => "margin-top: 25px;",
                             "value" => $mission->getDurate()
                         ]
                     ])
-                    ->add("Complete", SubmitType::class, [
+                    ->add("Completer", SubmitType::class, [
                         "attr" => [
                             "class" => "btn btn-outline-success form-control",
                             "style" => "margin-top: 25px;"

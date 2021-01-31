@@ -66,7 +66,7 @@ class __TwigTemplate_d1c8c847eb380e058685cf6b0ac50b981c6094d227529ccfec2bc72f2bb
 
         // line 5
         echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; margin-top: 100px;}
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
@@ -77,6 +77,16 @@ class __TwigTemplate_d1c8c847eb380e058685cf6b0ac50b981c6094d227529ccfec2bc72f2bb
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["missionForm"]) || array_key_exists("missionForm", $context) ? $context["missionForm"] : (function () { throw new RuntimeError('Variable "missionForm" does not exist.', 12, $this->source); })()), 'form');
         echo "
 </div>
+
+<script>
+    \$(\"#nav\").animate({
+        backgroundColor: \"rgba(255,255,255,0.7)\"
+    });
+    \$(\".nav-link\").animate({
+        color: \"black\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+</script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -108,7 +118,7 @@ class __TwigTemplate_d1c8c847eb380e058685cf6b0ac50b981c6094d227529ccfec2bc72f2bb
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; margin-top: 100px;}
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
@@ -116,6 +126,16 @@ class __TwigTemplate_d1c8c847eb380e058685cf6b0ac50b981c6094d227529ccfec2bc72f2bb
 
     {{form(missionForm)}}
 </div>
+
+<script>
+    \$(\"#nav\").animate({
+        backgroundColor: \"rgba(255,255,255,0.7)\"
+    });
+    \$(\".nav-link\").animate({
+        color: \"black\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+</script>
 {% endblock %}
 ", "mission/index.html.twig", "/home/souaguen/Bureau/s2ipartner/templates/mission/index.html.twig");
     }

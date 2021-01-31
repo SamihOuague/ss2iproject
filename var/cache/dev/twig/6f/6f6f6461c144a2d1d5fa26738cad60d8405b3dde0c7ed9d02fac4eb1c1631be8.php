@@ -66,7 +66,7 @@ class __TwigTemplate_6887d19a91a621101a84b54aa1fcdb436c7cd5839efa272f320f64e3078
 
         // line 4
         echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; margin-top: 150px;}
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
@@ -75,13 +75,23 @@ class __TwigTemplate_6887d19a91a621101a84b54aa1fcdb436c7cd5839efa272f320f64e3078
         <a class=\"btn btn-outline-warning\" href=\"";
         // line 11
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("client");
-        echo "\">Je cherche un technicien</a>
+        echo "\">Je suis une entreprise</a>
         <a class=\"btn btn-outline-warning\" href=\"";
         // line 12
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("customer");
-        echo "\">Je suis un technicien</a>
+        echo "\">Je suis un candidat</a>
     </div>
 </div>
+
+<script>
+    \$(\"#nav\").animate({
+        backgroundColor: \"rgba(255,255,255,0.7)\"
+    });
+    \$(\".nav-link\").animate({
+        color: \"black\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+</script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -112,16 +122,26 @@ class __TwigTemplate_6887d19a91a621101a84b54aa1fcdb436c7cd5839efa272f320f64e3078
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; margin-top: 150px;}
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
 <div class=\"example-wrapper d-flex justify-content-center text-center\">
     <div class=\"d-flex justify-content-around flex-column bg-dark\" style=\"height: 200px; width: 450px; padding: 20px; border-radius: 5px;\">
-        <a class=\"btn btn-outline-warning\" href=\"{{ path('client') }}\">Je cherche un technicien</a>
-        <a class=\"btn btn-outline-warning\" href=\"{{ path('customer') }}\">Je suis un technicien</a>
+        <a class=\"btn btn-outline-warning\" href=\"{{ path('client') }}\">Je suis une entreprise</a>
+        <a class=\"btn btn-outline-warning\" href=\"{{ path('customer') }}\">Je suis un candidat</a>
     </div>
 </div>
+
+<script>
+    \$(\"#nav\").animate({
+        backgroundColor: \"rgba(255,255,255,0.7)\"
+    });
+    \$(\".nav-link\").animate({
+        color: \"black\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+</script>
 {% endblock %}", "profil/index.html.twig", "/home/souaguen/Bureau/s2ipartner/templates/profil/index.html.twig");
     }
 }

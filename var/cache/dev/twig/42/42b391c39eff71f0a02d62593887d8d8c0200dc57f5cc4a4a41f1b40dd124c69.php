@@ -85,6 +85,13 @@ class __TwigTemplate_dbd0f379de93bf40bd11183520002556bd2d040e910003ac1ed85803a2d
             \$(\"#form_siret\").addClass(\"d-none\");
         }
     });
+    \$(\"#nav\").animate({
+        backgroundColor: \"rgba(255,255,255,0.7)\"
+    });
+    \$(\".nav-link\").animate({
+        color: \"black\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
 </script>
 ";
         
@@ -132,6 +139,13 @@ class __TwigTemplate_dbd0f379de93bf40bd11183520002556bd2d040e910003ac1ed85803a2d
             \$(\"#form_siret\").addClass(\"d-none\");
         }
     });
+    \$(\"#nav\").animate({
+        backgroundColor: \"rgba(255,255,255,0.7)\"
+    });
+    \$(\".nav-link\").animate({
+        color: \"black\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
 </script>
 {% endblock %}", "customer/customer.html.twig", "/home/souaguen/Bureau/s2ipartner/templates/customer/customer.html.twig");
     }

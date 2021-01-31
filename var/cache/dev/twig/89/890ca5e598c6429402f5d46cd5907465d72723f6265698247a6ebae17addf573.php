@@ -69,7 +69,7 @@ class __TwigTemplate_c54a634d079235116b6dc3d8f45f074e00661c5e661537d5884e4e429b8
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
-<div class=\"example-wrapper d-flex justify-content-center align-items-center\" style=\"height: 100%;\">
+<div class=\"example-wrapper d-flex justify-content-center align-items-center\" id=\"headbg\">
     <div style=\"width: 450px; margin-top: 100px;\">
         <form method=\"post\" class=\"bg-dark\" style=\"border-radius: 5px; padding: 25px;\">
             ";
@@ -98,39 +98,43 @@ class __TwigTemplate_c54a634d079235116b6dc3d8f45f074e00661c5e661537d5884e4e429b8
             ";
         }
         // line 20
-        echo "
-            <h1 class=\"h3 mb-3 font-weight-normal text-light text-center\">Se connecter</h1>
-            <input type=\"email\" value=\"";
-        // line 22
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 22, $this->source); })()), "html", null, true);
+        echo "            <input type=\"email\" value=\"";
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 20, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" placeholder=\"Adresse e-mail\" id=\"inputEmail\" class=\"form-control\" required autofocus>
             <br/>
             <input type=\"password\" name=\"password\" id=\"inputPassword\" placeholder=\"Mot de passe\" class=\"form-control\" required>
 
             <input type=\"hidden\" name=\"_csrf_token\"
                    value=\"";
-        // line 27
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
             >
 
             ";
-        // line 40
+        // line 38
         echo "            <br/>
             <div class=\"d-flex justify-content-between align-items-center\">
                 <button class=\"btn btn-lg btn-outline-warning\" type=\"submit\" style=\"margin-right: 15px;\">
                     Se connecter
                 </button>
                 <small>
-                    <a class=\"text-warning\" href=\"";
-        // line 46
+                    <a class=\"btn btn-outline-primary\" href=\"";
+        // line 44
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
-        echo "\">Vous n'avez pas encore de compte ?</a>
+        echo "\">S'inscrire</a>
                 </small>
             </div>
         </form>
     </div>
 </div>
+<script>
+    \$(\".nav-link\").animate({
+        color: \"#343a40\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+    \$(\"#headbg\").css(\"height\", window.innerHeight - 250);
+</script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -152,7 +156,7 @@ class __TwigTemplate_c54a634d079235116b6dc3d8f45f074e00661c5e661537d5884e4e429b8
 
     public function getDebugInfo()
     {
-        return array (  127 => 46,  119 => 40,  113 => 27,  105 => 22,  101 => 20,  93 => 17,  90 => 16,  88 => 15,  85 => 14,  79 => 12,  77 => 11,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  124 => 44,  116 => 38,  110 => 25,  101 => 20,  93 => 17,  90 => 16,  88 => 15,  85 => 14,  79 => 12,  77 => 11,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -164,7 +168,7 @@ class __TwigTemplate_c54a634d079235116b6dc3d8f45f074e00661c5e661537d5884e4e429b8
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
-<div class=\"example-wrapper d-flex justify-content-center align-items-center\" style=\"height: 100%;\">
+<div class=\"example-wrapper d-flex justify-content-center align-items-center\" id=\"headbg\">
     <div style=\"width: 450px; margin-top: 100px;\">
         <form method=\"post\" class=\"bg-dark\" style=\"border-radius: 5px; padding: 25px;\">
             {% if error %}
@@ -176,8 +180,6 @@ class __TwigTemplate_c54a634d079235116b6dc3d8f45f074e00661c5e661537d5884e4e429b8
                     You are logged in as {{ app.user.username }}, <a href=\"{{ path('app_logout') }}\">Logout</a>
                 </div>
             {% endif %}
-
-            <h1 class=\"h3 mb-3 font-weight-normal text-light text-center\">Se connecter</h1>
             <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" placeholder=\"Adresse e-mail\" id=\"inputEmail\" class=\"form-control\" required autofocus>
             <br/>
             <input type=\"password\" name=\"password\" id=\"inputPassword\" placeholder=\"Mot de passe\" class=\"form-control\" required>
@@ -202,12 +204,19 @@ class __TwigTemplate_c54a634d079235116b6dc3d8f45f074e00661c5e661537d5884e4e429b8
                     Se connecter
                 </button>
                 <small>
-                    <a class=\"text-warning\" href=\"{{ path('app_register') }}\">Vous n'avez pas encore de compte ?</a>
+                    <a class=\"btn btn-outline-primary\" href=\"{{ path('app_register') }}\">S'inscrire</a>
                 </small>
             </div>
         </form>
     </div>
 </div>
+<script>
+    \$(\".nav-link\").animate({
+        color: \"#343a40\"
+    });
+    \$(\"#logo\")[0].src = \"/logo.png\";
+    \$(\"#headbg\").css(\"height\", window.innerHeight - 250);
+</script>
 {% endblock %}
 ", "security/login.html.twig", "/home/souaguen/Bureau/s2ipartner/templates/security/login.html.twig");
     }

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-<div class="container" style="font-family: 'Montserrat';">
+<div class="container" style="font-family: 'Montserrat'; margin-top: 50px;">
 <br/>
 <br/>
 <p style="margin-bottom: 0.28cm; line-height: 108%">PRIVACY POLICY</p>
@@ -432,4 +432,13 @@ sans préavis.</font></font></p>
                 </div>
             </div>
         </div>
+        <script>
+    $("#nav").animate({
+        backgroundColor: "rgba(255,255,255,0.7)"
+    });
+    $(".nav-link").animate({
+        color: "black"
+    });
+    $("#logo")[0].src = "/logo.png";
+</script>
 {% endblock %}

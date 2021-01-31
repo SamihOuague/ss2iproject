@@ -348,14 +348,6 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
-    <service id="App\Controller\Admin\CandidatCrudController" class="App\Controller\Admin\CandidatCrudController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="ea.crud_controller"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.7Gh9pQb.App\Controller\Admin\CandidatCrudController"/>
-      </call>
-    </service>
     <service id="App\Controller\Admin\ClientCrudController" class="App\Controller\Admin\ClientCrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="ea.crud_controller"/>
@@ -5910,10 +5902,6 @@
       <argument type="service" id="symfonycasts.verify_email.token_generator"/>
       <argument>3600</argument>
     </service>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\CandidatCrudController" class="App\Controller\Admin\CandidatCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\CandidatCrudController" class="App\Controller\Admin\CandidatCrudController" autowire="true" abstract="true"/>
-    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\CandidatCrudController" class="App\Controller\Admin\CandidatCrudController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Admin\CandidatCrudController" class="App\Controller\Admin\CandidatCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\ClientCrudController" class="App\Controller\Admin\ClientCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ClientCrudController" class="App\Controller\Admin\ClientCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\ClientCrudController" class="App\Controller\Admin\ClientCrudController" autowire="true" abstract="true"/>
@@ -6393,29 +6381,9 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.Z9jPzpg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.IgPGZdm" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\Admin\CandidatCrudController::autocomplete" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::configureActions" type="service" id=".service_locator.CKlWSja"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::configureAssets" type="service" id=".service_locator.U4Bbnsn"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::configureCrud" type="service" id=".service_locator.4C0Bh8j"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::configureFilters" type="service" id=".service_locator.Nt.ogDb"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::configureResponseParameters" type="service" id=".service_locator.2dc0eaX"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::createEditForm" type="service" id=".service_locator.tbo4Jjv"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::createEditFormBuilder" type="service" id=".service_locator.tbo4Jjv"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::createIndexQueryBuilder" type="service" id=".service_locator.rAlqQ78"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::createNewForm" type="service" id=".service_locator.tbo4Jjv"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::createNewFormBuilder" type="service" id=".service_locator.tbo4Jjv"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::delete" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::deleteEntity" type="service" id=".service_locator.l2QwsaZ"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::detail" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::edit" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::index" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::new" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::persistEntity" type="service" id=".service_locator.l2QwsaZ"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::renderFilters" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController::updateEntity" type="service" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\ClientCrudController::autocomplete" type="service" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\ClientCrudController::configureActions" type="service" id=".service_locator.CKlWSja"/>
         <argument key="App\Controller\Admin\ClientCrudController::configureAssets" type="service" id=".service_locator.U4Bbnsn"/>
@@ -6519,6 +6487,7 @@
         <argument key="App\Controller\Admin\UserCrudController::updateEntity" type="service" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\CustomerController::customer" type="service" id=".service_locator.fZXk27d"/>
         <argument key="App\Controller\HomeController::contact" type="service" id=".service_locator.CpaXrFh"/>
+        <argument key="App\Controller\MissionController::postuleMission" type="service" id=".service_locator.CpaXrFh"/>
         <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.pwZ6MTM"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
@@ -6527,26 +6496,6 @@
         <argument key="kernel::loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel::terminate" type="service" id=".service_locator.KfwZsne"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:autocomplete" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:configureActions" type="service" id=".service_locator.CKlWSja"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:configureAssets" type="service" id=".service_locator.U4Bbnsn"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:configureCrud" type="service" id=".service_locator.4C0Bh8j"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:configureFilters" type="service" id=".service_locator.Nt.ogDb"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:configureResponseParameters" type="service" id=".service_locator.2dc0eaX"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:createEditForm" type="service" id=".service_locator.tbo4Jjv"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:createEditFormBuilder" type="service" id=".service_locator.tbo4Jjv"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:createIndexQueryBuilder" type="service" id=".service_locator.rAlqQ78"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:createNewForm" type="service" id=".service_locator.tbo4Jjv"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:createNewFormBuilder" type="service" id=".service_locator.tbo4Jjv"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:delete" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:deleteEntity" type="service" id=".service_locator.l2QwsaZ"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:detail" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:edit" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:index" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:new" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:persistEntity" type="service" id=".service_locator.l2QwsaZ"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:renderFilters" type="service" id=".service_locator.ZOQ9v2d"/>
-        <argument key="App\Controller\Admin\CandidatCrudController:updateEntity" type="service" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\ClientCrudController:autocomplete" type="service" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\ClientCrudController:configureActions" type="service" id=".service_locator.CKlWSja"/>
         <argument key="App\Controller\Admin\ClientCrudController:configureAssets" type="service" id=".service_locator.U4Bbnsn"/>
@@ -6650,6 +6599,7 @@
         <argument key="App\Controller\Admin\UserCrudController:updateEntity" type="service" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\CustomerController:customer" type="service" id=".service_locator.fZXk27d"/>
         <argument key="App\Controller\HomeController:contact" type="service" id=".service_locator.CpaXrFh"/>
+        <argument key="App\Controller\MissionController:postuleMission" type="service" id=".service_locator.CpaXrFh"/>
         <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.pwZ6MTM"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.UDgw6Ol"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
@@ -6945,7 +6895,6 @@
     <service id="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry" class="EasyCorp\Bundle\EasyAdminBundle\Registry\CrudControllerRegistry">
       <argument>%env(APP_SECRET)%</argument>
       <argument type="collection">
-        <argument>App\Controller\Admin\CandidatCrudController</argument>
         <argument>App\Controller\Admin\ClientCrudController</argument>
         <argument>App\Controller\Admin\CustomerCrudController</argument>
         <argument>App\Controller\Admin\ManagerCrudController</argument>
@@ -6998,12 +6947,6 @@
         <argument key="session" type="service" id="session" on-invalid="ignore"/>
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
-    </service>
-    <service id=".service_locator.7Gh9pQb.App\Controller\Admin\CandidatCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Admin\CandidatCrudController"/>
-      <argument>App\Controller\Admin\CandidatCrudController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.7Gh9pQb" method="withContext"/>
     </service>
     <service id=".service_locator.7Gh9pQb.App\Controller\Admin\ClientCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\ClientCrudController"/>
@@ -7298,12 +7241,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Provider\AdminContextProvider"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.Z9jPzpg"/>
+      <argument type="service" id=".service_locator.IgPGZdm"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.Z9jPzpg"/>
+      <argument type="service" id=".service_locator.IgPGZdm"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
       <argument type="collection"/>
@@ -7733,7 +7676,7 @@
     <service id="SymfonyCasts\Bundle\VerifyEmail\VerifyEmailHelperInterface" alias="symfonycasts.verify_email.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Z9jPzpg"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.IgPGZdm"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

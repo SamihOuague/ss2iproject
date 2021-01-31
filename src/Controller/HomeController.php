@@ -71,14 +71,22 @@ class HomeController extends AbstractController
             else {
                 return $this->redirectToRoute('profil');
             }
+            return $this->render('home/dashboard.html.twig', [
+                'controller_name' => 'HomeController',
+                'profil' => $profil,
+                'client' => $client,
+                'missions' => $missions,
+                'manager' => $manager,
+                'form' => $form->createView()
+            ]);
+        } else {
+            $missions = $this->getDoctrine()
+                            ->getRepository(Mission::class)
+                            ->findBy([], ['id' => 'DESC'], '3');
         }
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
-            'profil' => $profil,
-            'client' => $client,
-            'missions' => $missions,
-            'manager' => $manager,
-            'form' => $form->createView()
+            'missions' => $missions
         ]);
     }
 

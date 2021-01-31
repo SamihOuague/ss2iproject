@@ -78,7 +78,7 @@ class __TwigTemplate_529336f5e3d13b921e60b8161c74bd16c661d7622877111bb5849d77fdb
         echo " ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["candidat"]) || array_key_exists("candidat", $context) ? $context["candidat"] : (function () { throw new RuntimeError('Variable "candidat" does not exist.', 11, $this->source); })()), "customer", [], "any", false, false, false, 11), "first", [], "any", false, false, false, 11), "lastname", [], "any", false, false, false, 11), "html", null, true);
         echo "</h2>
-        <p>Vehiculer : ";
+        <p>Véhiculé : ";
         // line 12
         echo ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["candidat"]) || array_key_exists("candidat", $context) ? $context["candidat"] : (function () { throw new RuntimeError('Variable "candidat" does not exist.', 12, $this->source); })()), "customer", [], "any", false, false, false, 12), "first", [], "any", false, false, false, 12), "vehicle", [], "any", false, false, false, 12)) ? ("Oui") : ("Non"));
         echo "</p>
@@ -138,7 +138,7 @@ class __TwigTemplate_529336f5e3d13b921e60b8161c74bd16c661d7622877111bb5849d77fdb
 <div class=\"example-wrapper\">
     <div class=\"jumbotron\">
         <h2>{{candidat.customer.first.firstname}} {{candidat.customer.first.lastname}}</h2>
-        <p>Vehiculer : {{(candidat.customer.first.vehicle) ? \"Oui\" : \"Non\"}}</p>
+        <p>Véhiculé : {{(candidat.customer.first.vehicle) ? \"Oui\" : \"Non\"}}</p>
         <p>Poste : {{candidat.customer.first.role}}</p>
         <p>Contrat rechercher : {{candidat.customer.first.contract}}</p>
         {% if (candidat.customer.first.cv) %}

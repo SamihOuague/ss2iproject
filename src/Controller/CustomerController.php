@@ -53,7 +53,7 @@ class CustomerController extends AbstractController
                         "required" => true,
                         "attr" => [
                             "class" => "form-control",
-                            "placeholder" => "Nom de famille",
+                            "placeholder" => "Nom",
                             "style" => "margin-top: 25px;"
                         ]
                     ])
@@ -62,7 +62,7 @@ class CustomerController extends AbstractController
                         "required" => true,
                         "attr" => [
                             "class" => "form-control",
-                            "placeholder" => "Prenom",
+                            "placeholder" => "Prénom",
                             "style" => "margin-top: 25px;"
                         ]
                     ])
@@ -87,7 +87,7 @@ class CustomerController extends AbstractController
                     ->add("vehicle", ChoiceType::class, [
                         "label" => false,
                         "choices" => [
-                            "Vehicule" => null,
+                            "Véhiculé" => null,
                             "Oui" => true,
                             "Non" => false
                         ],

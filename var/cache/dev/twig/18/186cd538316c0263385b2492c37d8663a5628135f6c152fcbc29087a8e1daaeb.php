@@ -66,7 +66,7 @@ class __TwigTemplate_616bbb8f3086730f5ec35ff1abb191a2e3014ddfaa1708c2cddc602eeb4
 
         // line 4
         echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; margin-top: 100px;}
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
@@ -102,6 +102,18 @@ class __TwigTemplate_616bbb8f3086730f5ec35ff1abb191a2e3014ddfaa1708c2cddc602eeb4
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['candidat'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 21
+        echo "
+    <script>
+        \$(\"#nav\").animate({
+            backgroundColor: \"rgba(255,255,255,0.7)\"
+        });
+        \$(\".nav-link\").animate({
+            color: \"black\"
+        });
+        \$(\"#logo\")[0].src = \"/logo.png\";
+    </script>
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -122,7 +134,7 @@ class __TwigTemplate_616bbb8f3086730f5ec35ff1abb191a2e3014ddfaa1708c2cddc602eeb4
 
     public function getDebugInfo()
     {
-        return array (  96 => 17,  92 => 16,  85 => 14,  82 => 13,  78 => 12,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  106 => 21,  96 => 17,  92 => 16,  85 => 14,  82 => 13,  78 => 12,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -131,7 +143,7 @@ class __TwigTemplate_616bbb8f3086730f5ec35ff1abb191a2e3014ddfaa1708c2cddc602eeb4
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; margin-top: 100px;}
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
@@ -147,6 +159,16 @@ class __TwigTemplate_616bbb8f3086730f5ec35ff1abb191a2e3014ddfaa1708c2cddc602eeb4
             </div>
         </div>
     {% endfor %}
+
+    <script>
+        \$(\"#nav\").animate({
+            backgroundColor: \"rgba(255,255,255,0.7)\"
+        });
+        \$(\".nav-link\").animate({
+            color: \"black\"
+        });
+        \$(\"#logo\")[0].src = \"/logo.png\";
+    </script>
 {% endblock %}", "candidat/candidats.html.twig", "/home/souaguen/Bureau/s2ipartner/templates/candidat/candidats.html.twig");
     }
 }
